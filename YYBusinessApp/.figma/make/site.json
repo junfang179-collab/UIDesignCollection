@@ -1,0 +1,10 @@
+{
+  "description": "为UI/UX设计师打造YY Business作品集与PPT展示，整合项目背景、设计流程、用户研究、页面优化及英文界面截图。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

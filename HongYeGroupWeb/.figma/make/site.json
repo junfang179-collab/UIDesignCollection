@@ -1,0 +1,10 @@
+{
+  "description": "以多屏PPT式版面展示YY Circle官网截图与中文项目说明，帮助UI/UX设计师清晰呈现网站设计作品。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

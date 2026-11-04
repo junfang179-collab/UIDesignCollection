@@ -1,0 +1,10 @@
+{
+  "description": "以中文呈现 CLMS 酒店管理系统的 UI/UX 设计作品集，通过全屏展示应用截图与项目说明，帮助设计师进行作品演示。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

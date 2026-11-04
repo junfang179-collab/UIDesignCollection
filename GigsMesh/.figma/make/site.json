@@ -1,0 +1,10 @@
+{
+  "description": "A polished UI/UX portfolio presenting the GigsMesh app’s research, design process, goals, visual explorations, and screen showcases for prospective clients and employers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

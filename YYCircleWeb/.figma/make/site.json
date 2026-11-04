@@ -1,0 +1,10 @@
+{
+  "description": "以中文介绍 YY Circle 官网设计项目，并按 1920:1080 演示页展示英文界面截图与项目说明，适合设计师制作作品集和 PPT。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

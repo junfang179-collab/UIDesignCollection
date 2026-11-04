@@ -1,0 +1,10 @@
+{
+  "description": "展示 SMART ICLEAN DATA PLATFORM 后台界面与项目说明的中文作品集演示页，帮助 UI/UX 设计师清晰呈现系统设计成果。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

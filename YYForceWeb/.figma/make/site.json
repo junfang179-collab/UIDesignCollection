@@ -1,0 +1,10 @@
+{
+  "description": "以中文展示 YYForce 官网设计作品与项目说明，按 16:9 多屏布局呈现页面截图，适合 UI/UX 设计师制作作品集和 PPT 演示。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

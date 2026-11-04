@@ -1,0 +1,10 @@
+{
+  "description": "展示 Smart iClean 项目背景、用户研究、设计流程与移动端界面截图的 UI/UX 作品集，帮助设计师清晰呈现设计思路与成果。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

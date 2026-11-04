@@ -1,0 +1,10 @@
+{
+  "description": "展示24iFM移动应用设计过程与界面截图，涵盖用户研究、设计目标、信息架构和视觉探索，为UI/UX设计师提供完整的作品集案例。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

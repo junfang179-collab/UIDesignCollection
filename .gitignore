@@ -1,0 +1,22 @@
+node_modules
+dist
+.DS_Store
+*.local
+
+# 智能体本地状态
+.workbuddy
+
+# 11 个项目的静态资源已合并到根 public/，仓库内不重复提交副本
+/24iFM/public
+/CLMSApp/public
+/GigsMesh/public
+/HongYeGroupWeb/public
+/SMARTICLEANHT/public
+/SmartiCleanApp/public
+/YYBusinessApp/public
+/YYCircleApp/public
+/YYCircleWeb/public
+/YYForceWeb/public
+/YYPetApp/public
+/YYBusinessApp/src/assets
+/YYCircleApp/src/assets

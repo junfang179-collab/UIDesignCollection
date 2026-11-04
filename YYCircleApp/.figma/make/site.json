@@ -1,0 +1,10 @@
+{
+  "description": "展示 Smart iClean 的 UI/UX 设计作品集，涵盖项目背景、用户研究、设计流程与手机界面截图，适用于作品展示和 PPT 汇报。",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
