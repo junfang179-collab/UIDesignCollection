@@ -25,10 +25,10 @@
 
 @layer components {
   .slide {
-    --pad-x: clamp(72px, 7.2vw, 138px);
+    --pad-x: 138px;
     position: relative;
     width: 100%;
-    height: 100svh;
+    height: 1080px;
     min-height: 720px;
     overflow: hidden;
     scroll-snap-align: start;
@@ -41,9 +41,9 @@
   }
 
   .eyebrow {
-    margin-bottom: clamp(16px, 1.5vw, 28px);
+    margin-bottom: 28px;
     color: #009fd0;
-    font-size: clamp(11px, .72vw, 14px);
+    font-size: 13.8px;
     font-weight: 700;
     letter-spacing: .22em;
   }
@@ -131,7 +131,7 @@
     flex-direction: column;
     align-items: center;
     width: 54px;
-    height: 100svh;
+    height: 1080px;
     padding: 22px 0 18px;
     border-right: 1px solid rgba(255, 255, 255, .16);
     background: rgba(4, 32, 44, .9);
@@ -213,8 +213,8 @@
     top: 10%;
     right: 10%;
     z-index: -1;
-    width: 40vw;
-    height: 40vw;
+    width: 768px;
+    height: 768px;
     border-radius: 50%;
     background: #00a5d2;
     filter: blur(150px);
@@ -232,7 +232,7 @@
   .cover-copy h1 {
     margin: 0;
     color: #fff;
-    font-size: clamp(64px, 6.15vw, 118px);
+    font-size: 118px;
     font-weight: 600;
     letter-spacing: -.065em;
     line-height: .86;
@@ -250,16 +250,16 @@
   }
 
   .cover-copy > p {
-    margin-top: clamp(25px, 3vh, 44px);
+    margin-top: 32.4px;
     color: rgba(255,255,255,.68);
-    font-size: clamp(14px, 1.05vw, 20px);
+    font-size: 20px;
     line-height: 1.9;
   }
 
   .cover-meta {
     display: flex;
     gap: 42px;
-    margin-top: clamp(28px, 4vh, 60px);
+    margin-top: 43.2px;
   }
 
   .cover-meta div { display: grid; gap: 7px; }
@@ -285,7 +285,7 @@
 
   /* 02 overview */
   .slide-overview {
-    padding: 10vh var(--pad-x) 7vh;
+    padding: 108px var(--pad-x) 75.6px;
     background: #f7fbfc;
   }
 
@@ -298,13 +298,13 @@
 
   .overview-top h2 {
     margin: 0;
-    font-size: clamp(48px, 4.4vw, 84px);
+    font-size: 84px;
   }
 
   .overview-lead {
     margin: 0 0 7px;
     color: #58727c;
-    font-size: clamp(15px, 1.03vw, 20px);
+    font-size: 19.8px;
     line-height: 1.9;
   }
 
@@ -312,7 +312,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
-    margin-top: 7vh;
+    margin-top: 75.6px;
   }
 
   .challenge-grid article {
@@ -347,7 +347,7 @@
     border-right: 1px solid rgba(255,255,255,.22);
   }
 
-  .overview-strip b { font-size: clamp(34px, 3vw, 58px); line-height: 1; }
+  .overview-strip b { font-size: 57.6px; line-height: 1; }
   .overview-strip span { margin-top: 10px; font-size: 11px; opacity: .75; }
   .overview-strip img { width: 12.5%; object-fit: cover; object-position: top; filter: saturate(.75); }
 
@@ -365,9 +365,9 @@
     padding-right: 16%;
   }
 
-  .system-copy h2 { margin: 0; font-size: clamp(54px, 5vw, 96px); }
+  .system-copy h2 { margin: 0; font-size: 96px; }
   .system-copy > p { margin-top: 32px; color: rgba(255,255,255,.58); font-size: 15px; line-height: 1.9; }
-  .principles { margin-top: 6vh; border-top: 1px solid rgba(255,255,255,.18); }
+  .principles { margin-top: 64.8px; border-top: 1px solid rgba(255,255,255,.18); }
 
   .principles > div {
     display: grid;
@@ -410,9 +410,9 @@
   }
 
   .type-specimen > span { align-self: start; color: #00a5d2; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
-  .type-specimen strong { font-size: clamp(70px, 7vw, 132px); letter-spacing: -.09em; }
+  .type-specimen strong { font-size: 132px; letter-spacing: -.09em; }
   .type-specimen > div { display: grid; gap: 15px; }
-  .type-specimen b { font-size: clamp(17px, 1.7vw, 32px); line-height: 1.25; }
+  .type-specimen b { font-size: 32px; line-height: 1.25; }
   .type-specimen small { color: #799098; font-size: 13px; }
 
   .ui-samples { display: flex; align-items: center; gap: 5%; height: 29%; padding: 4% 5%; }
@@ -425,11 +425,11 @@
   /* 04 homepage */
   .slide-showcase { background: #eef8fb; }
   .showcase-copy { position: absolute; top: 12%; left: var(--pad-x); z-index: 4; width: 31%; }
-  .showcase-copy h2 { margin: 0; font-size: clamp(54px, 5vw, 96px); }
+  .showcase-copy h2 { margin: 0; font-size: 96px; }
   .showcase-copy > p { margin: 26px 0; color: #58727b; font-size: 15px; line-height: 1.8; }
   .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
   .tag-row span { padding: 8px 13px; border: 1px solid #a7dce9; border-radius: 30px; color: #087c9c; font-size: 10px; }
-  .note { margin-top: 6vh; padding: 18px 20px; border-left: 3px solid #00a5d2; background: white; color: #6d8289; font-size: 12px; line-height: 1.75; }
+  .note { margin-top: 64.8px; padding: 18px 20px; border-left: 3px solid #00a5d2; background: white; color: #6d8289; font-size: 12px; line-height: 1.75; }
   .note b { display: block; margin-bottom: 5px; color: #0b3442; }
   .showcase-browser { top: 8%; right: 5%; width: 58%; height: 58%; }
   .showcase-detail { right: 5%; bottom: 7%; z-index: 5; width: 37%; height: 31%; }
@@ -441,8 +441,8 @@
   .ifm-browser { top: 9%; left: 8%; width: 84%; height: 55%; }
   .ifm-detail { right: 3%; bottom: 8%; z-index: 4; width: 65%; height: 35%; }
   .ifm-copy { align-self: center; padding: 0 13% 0 10%; }
-  .ifm-copy h2 { margin: 0; font-size: clamp(54px, 4.8vw, 92px); }
-  .ifm-copy > p { margin: 28px 0 5vh; color: rgba(255,255,255,.58); font-size: 15px; line-height: 1.85; }
+  .ifm-copy h2 { margin: 0; font-size: 92px; }
+  .ifm-copy > p { margin: 28px 0 54px; color: rgba(255,255,255,.58); font-size: 15px; line-height: 1.85; }
   .metric-list { border-top: 1px solid rgba(255,255,255,.16); }
   .metric-list > div { display: grid; grid-template-columns: 34px 1fr; gap: 5px 12px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.16); }
   .metric-list span { grid-row: span 2; color: #4fd0ed; font-size: 10px; }
@@ -450,16 +450,16 @@
   .metric-list small { color: rgba(255,255,255,.4); font-size: 10px; }
 
   /* 06 cleaning */
-  .slide-cleaning { padding: 8vh var(--pad-x); background: #fff; }
+  .slide-cleaning { padding: 86.4px var(--pad-x); background: #fff; }
   .cleaning-head { display: grid; grid-template-columns: 1fr 40%; align-items: end; }
-  .cleaning-head h2 { margin: 0; font-size: clamp(48px, 4.2vw, 80px); }
+  .cleaning-head h2 { margin: 0; font-size: 80px; }
   .cleaning-head > p { margin: 0; color: #627a83; font-size: 14px; line-height: 1.8; }
-  .cleaning-layout { position: relative; height: 66%; margin-top: 5vh; }
+  .cleaning-layout { position: relative; height: 66%; margin-top: 54px; }
   .cleaning-browser { top: 0; left: 0; width: 69%; height: 68%; }
   .cleaning-detail { right: 31%; bottom: 0; z-index: 4; width: 43%; height: 39%; }
   .cleaning-insights { position: absolute; top: 0; right: 0; width: 27%; height: 100%; padding: 3% 3%; background: #eaf7fb; }
   .insight-no { color: #00a5d2; font-size: 11px; font-weight: 700; }
-  .cleaning-insights h3 { margin: 17px 0 4vh; font-size: clamp(26px, 2.2vw, 42px); line-height: 1.14; letter-spacing: -.04em; }
+  .cleaning-insights h3 { margin: 17px 0 43.2px; font-size: 42px; line-height: 1.14; letter-spacing: -.04em; }
   .cleaning-insights ul { margin: 0; padding: 0; list-style: none; }
   .cleaning-insights li { display: grid; grid-template-columns: 32px 1fr; padding: 13px 0; border-top: 1px solid #bedde5; color: #496873; font-size: 11px; }
   .cleaning-insights li span { color: #00a5d2; font-size: 9px; font-weight: 700; }
@@ -468,17 +468,17 @@
   .slide-disinfection { background: #00a5d2; color: white; }
   .disinfection-bg { position: absolute; inset: 0 52% 0 0; background: #072f3f; }
   .disinfection-copy { position: absolute; top: 12%; left: var(--pad-x); z-index: 3; width: 35%; }
-  .disinfection-copy h2 { margin: 0; font-size: clamp(52px, 4.6vw, 88px); }
+  .disinfection-copy h2 { margin: 0; font-size: 88px; }
   .disinfection-copy > p { width: 85%; margin: 28px 0; color: rgba(255,255,255,.62); font-size: 14px; line-height: 1.85; }
-  .process { display: flex; align-items: center; margin-top: 7vh; color: #62d9f3; font-size: 8px; font-weight: 700; letter-spacing: .12em; }
+  .process { display: flex; align-items: center; margin-top: 75.6px; color: #62d9f3; font-size: 8px; font-weight: 700; letter-spacing: .12em; }
   .process i { width: 24px; height: 1px; margin: 0 8px; background: rgba(255,255,255,.28); }
   .disinfection-browser { top: 9%; right: 5%; width: 53%; height: 58%; }
   .disinfection-detail { right: 4%; bottom: 7%; z-index: 4; width: 36%; height: 31%; }
 
   /* 08 dual */
-  .slide-dual { padding: 8vh var(--pad-x); background: #f4fafb; }
+  .slide-dual { padding: 86.4px var(--pad-x); background: #f4fafb; }
   .dual-heading { position: absolute; top: 9%; left: var(--pad-x); width: 25%; }
-  .dual-heading h2 { margin: 0; font-size: clamp(42px, 3.8vw, 72px); }
+  .dual-heading h2 { margin: 0; font-size: 72px; }
   .dual-heading p { margin-top: 24px; color: #607982; font-size: 13px; line-height: 1.8; }
   .dual-card { position: absolute; top: 8%; width: 29%; height: 84%; background: #dff3f8; }
   .dual-card--security { left: 39%; }
@@ -493,9 +493,9 @@
   .dual-card .dual-detail { right: 5%; bottom: 5%; z-index: 5; width: 72%; height: 32%; }
 
   /* 09 content */
-  .slide-content { display: grid; grid-template-columns: 25% 1fr 1fr; gap: 3%; padding: 8vh 5% 7vh var(--pad-x); background: #062e3e; color: white; }
+  .slide-content { display: grid; grid-template-columns: 25% 1fr 1fr; gap: 3%; padding: 86.4px 5% 75.6px var(--pad-x); background: #062e3e; color: white; }
   .content-heading { align-self: center; }
-  .content-heading h2 { margin: 0; font-size: clamp(42px, 3.7vw, 70px); }
+  .content-heading h2 { margin: 0; font-size: 70px; }
   .content-column { position: relative; align-self: center; height: 82%; padding-top: 100px; }
   .content-label { position: absolute; top: 0; left: 0; display: grid; gap: 6px; }
   .content-label span { color: #5bd5f1; font-size: 8px; font-weight: 700; letter-spacing: .2em; }
@@ -507,18 +507,18 @@
   /* 10 final */
   .slide-final { background: #f5fafb; }
   .final-copy { position: absolute; top: 11%; left: var(--pad-x); width: 35%; }
-  .final-copy h2 { margin: 0; font-size: clamp(52px, 4.6vw, 88px); }
+  .final-copy h2 { margin: 0; font-size: 88px; }
   .final-copy > p { width: 85%; margin-top: 26px; color: #627a83; font-size: 14px; line-height: 1.8; }
-  .final-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 5vh; }
+  .final-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 54px; }
   .final-results div { display: grid; gap: 8px; padding: 18px 12px; border-top: 2px solid #00a5d2; background: white; }
   .final-results b { font-size: 16px; }
   .final-results span { color: #789097; font-size: 9px; }
-  .final-quote { margin-top: 4vh; padding-left: 18px; border-left: 2px solid #00a5d2; color: #345965; font-size: 12px; line-height: 1.7; }
+  .final-quote { margin-top: 43.2px; padding-left: 18px; border-left: 2px solid #00a5d2; color: #345965; font-size: 12px; line-height: 1.7; }
   .final-browser { top: 7%; right: 5%; width: 54%; height: 49%; }
   .final-detail { right: 4%; bottom: 19%; z-index: 5; width: 38%; height: 31%; }
   .thank-you { position: absolute; right: 0; bottom: 0; left: 54px; display: flex; align-items: center; justify-content: space-between; height: 17%; padding: 0 7%; background: #00a5d2; color: white; }
   .thank-you span { font-size: 9px; font-weight: 700; letter-spacing: .22em; }
-  .thank-you b { font-size: clamp(42px, 5vw, 96px); letter-spacing: -.06em; }
+  .thank-you b { font-size: 96px; letter-spacing: -.06em; }
 }
 
 @media (max-width: 900px) {
@@ -538,4 +538,48 @@
   .dual-card--security { left: 42%; }
   .dual-card { width: 27%; }
   .slide-content { grid-template-columns: 27% 1fr 1fr; }
+}
+
+/* =============================================================
+   固定 1920×1080 舞台：每一屏按 16:9 等比缩放，任何窗口比例都不重排
+   ============================================================= */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+/* 上下留白必须落在缩放层之外，否则会被 zoom 一起缩放 */
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(100vh - 1080px * var(--stage-s, 1));
+  padding-block: calc((100vh - 1080px * var(--stage-s, 1)) / 2);
+}
+
+.slide {
+  width: 1920px;
+  height: 1080px;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  margin: 0 auto;
+  flex: none;
+  overflow: hidden;
+  zoom: var(--stage-s, 1);
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* 非 16:9 视口的外围底色：统一中性深色，避免浅色留边看起来像渲染缺陷 */
+:root,
+body {
+  background: #0b0f14 !important;
+}
+
+/* 吸附链路修复：main 上的 overflow:hidden 会变成新的滚动容器，割断 html 的 scroll-snap */
+main {
+  overflow: visible;
+}
+
+body {
+  overflow-x: clip;
 }

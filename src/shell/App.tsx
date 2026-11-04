@@ -105,6 +105,7 @@ export default function App() {
         src={srcOf(current)}
         title={current.name}
         onLoad={handleLoad}
+        allow="clipboard-write"
       />
 
       {veiled && (

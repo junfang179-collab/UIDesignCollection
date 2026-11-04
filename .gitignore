@@ -20,3 +20,7 @@ dist
 /YYPetApp/public
 /YYBusinessApp/src/assets
 /YYCircleApp/src/assets
+
+# 本地临时文件
+~$*
+*.pptx

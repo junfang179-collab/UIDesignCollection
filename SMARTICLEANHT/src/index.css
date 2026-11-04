@@ -1167,3 +1167,73 @@ h1 em {
     break-after: page;
   }
 }
+
+/* =============================================================
+   固定 1920×1080 舞台：每一屏按 16:9 等比缩放，任何窗口比例都不重排
+   ============================================================= */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+/* 上下留白必须落在缩放层之外，否则会被 zoom 一起缩放 */
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(100vh - 1080px * var(--stage-s, 1));
+  padding-block: calc((100vh - 1080px * var(--stage-s, 1)) / 2);
+}
+
+body {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+.slide {
+  width: 1920px;
+  height: 1080px;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  margin: 0 auto;
+  flex: none;
+  overflow: hidden;
+  zoom: var(--stage-s, 1);
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* COPY 按钮避让：右侧竖向翻页轨内移，避免与贴边按钮重叠 */
+.deck-nav {
+  right: 60px;
+}
+
+/* 结尾页整体垂直居中，避免标题与卡片挤在上半屏 */
+.summary-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 120px;
+}
+.summary-slide .summary-heading {
+  margin-top: 0;
+}
+
+/* 非 16:9 视口的外围底色：统一中性深色，避免浅色留边看起来像渲染缺陷 */
+:root,
+body {
+  background: #0b0f14 !important;
+}
+
+/* 吸附链路修复：main 上的 overflow:hidden 会变成新的滚动容器，割断 html 的 scroll-snap */
+main {
+  overflow: visible;
+}
+
+body {
+  overflow-x: clip;
+}
