@@ -132,6 +132,38 @@ main { width: 100%; }
 .cover__stamp b { font-size:48px; line-height:1; }.cover__stamp span{font-size:10.6px;letter-spacing:.12em;}
 .cover__note { position:absolute; left:8%; bottom:10%; font-size:14px; font-weight:800; letter-spacing:.16em; }
 
+/* 封面合并项目背景 */
+.cover__context {
+  max-width: 720px;
+  margin-top: 4.5%;
+  padding-top: 2.6%;
+  border-top: 1px solid rgba(23,50,77,.25);
+}
+.cover__context p {
+  color: #3d5365;
+  font-size: 21px;
+  line-height: 1.75;
+}
+.cover__context strong { color: #d75a42; }
+.cover__stats {
+  display: flex;
+  gap: 44px;
+  margin-top: 26px;
+}
+.cover__stats div { display: flex; align-items: baseline; gap: 10px; }
+.cover__stats b {
+  color: #17324d;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1;
+}
+.cover__stats span {
+  color: #5b6c78;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* Context */
 .context-grid { display:grid; grid-template-columns: 42% 58%; height:76%; align-items:center; }
 .context-copy { padding-right:8%; }
@@ -238,4 +270,82 @@ main {
 
 body {
   overflow-x: clip;
+}
+
+/* =============================================================
+   作品回顾 · 10 张截图汇总（原「成长闭环 / 项目回顾」两屏合并）
+   ============================================================= */
+.outro {
+  padding: 62px 96px 56px;
+  color: #fff9e9;
+  background:
+    radial-gradient(circle at 50% 108%, rgba(125,203,88,.20), transparent 46%),
+    radial-gradient(circle at 88% 4%, rgba(244,201,73,.10), transparent 34%),
+    linear-gradient(135deg, #17324d 0%, #102a2f 100%);
+}
+
+.outro__glow {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: -46%;
+  width: 96%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(125,203,88,.13) 0%, transparent 62%);
+  pointer-events: none;
+}
+
+.outro__head {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.outro__head .eyebrow {
+  margin-bottom: 10px;
+  color: #f4c949;
+  font-size: 13px;
+}
+
+.outro__head h2 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+
+.outro__wall {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-top: 28px;
+}
+
+/* 首尾手机贴住内容区两端，把横向撑满，两侧不空 */
+.outro__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.outro__cell {
+  width: 216px;
+}
+
+.outro__cell .phone {
+  width: 216px;
+  aspect-ratio: 750 / 1334;
+  border-width: 6px;
+  border-radius: 26px;
+  box-shadow: 0 22px 44px rgba(0,0,0,.38);
+}
+
+.outro__cell .phone img {
+  object-fit: cover;
+  object-position: top;
 }

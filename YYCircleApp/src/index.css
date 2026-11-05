@@ -283,8 +283,9 @@
 
 .cover-phones .phone-back {
   position: absolute;
-  top: 11%;
-  left: 2%;
+  top: 13%;
+  left: 10%;
+  width: 296px;
   transform: rotate(-7deg);
   opacity: .7;
 }
@@ -310,7 +311,7 @@
 .cover-merged .cover-copy {
   display: flex;
   flex-direction: column;
-  width: 54%;
+  width: 52%;
   height: 100%;
   padding-top: 0;
 }
@@ -333,49 +334,122 @@
 }
 
 .cover-body {
-  margin-top: 84px;
-  padding: 36px 0 6px;
+  margin-top: 58px;
+  padding: 28px 0 0;
   border-top: 1px solid #ffffff24;
 }
 
 .cover-body h3 {
-  font-size: 33px;
+  font-size: 31px;
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -.02em;
 }
 
 .cover-lead {
-  max-width: 748px;
-  margin-top: 16px;
+  max-width: 810px;
+  margin-top: 12px;
   color: #ffffffad;
   font-size: 19px;
   line-height: 1.72;
 }
 
+/* 01 两侧定位 */
+.cover-split-label {
+  margin-top: 22px;
+  color: #ffffff6b;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .22em;
+}
+
+.cover-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  max-width: 810px;
+  margin-top: 12px;
+}
+
+.cover-split-item p {
+  color: #ffffffa3;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cover-split-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 10px;
+  margin-bottom: 8px;
+  color: #ffffff59;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.cover-split-title span {
+  color: var(--lime);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+/* 01 配套能力 */
+.cover-cap {
+  margin-top: 18px;
+  max-width: 810px;
+}
+
+.cover-cap-title {
+  color: #ffffff6b;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .22em;
+}
+
+.cover-cap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 520px;
+  margin-top: 11px;
+}
+
+.cover-cap-tags span {
+  padding: 4px 10px;
+  border: 1px solid #ffffff26;
+  border-radius: 999px;
+  color: #ffffffb8;
+  font-size: 13px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
 .cover-stats {
   display: flex;
-  gap: 66px;
-  margin-top: auto;
-  padding-top: 40px;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  margin-top: 16px;
+  max-width: 810px;
 }
 
 .cover-stats div {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  gap: 6px;
 }
 
 .cover-stats strong {
   color: var(--lime);
-  font-size: 38px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1;
 }
 
 .cover-stats span {
-  margin-top: 8px;
-  color: #ffffff8a;
-  font-size: 16.5px;
+  color: #ffffff80;
+  font-size: 13px;
 }
 
 /* 共用文字块 */

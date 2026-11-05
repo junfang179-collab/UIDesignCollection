@@ -3,16 +3,13 @@ import { useEffect, useState } from "react"
 const IMG = "/yy-pet/"
 
 const slides = [
-  "封面",
-  "项目背景",
+  "封面 · 项目背景",
   "机会洞察",
   "核心任务流",
-  "组件系统",
   "风格探索",
   "核心体验",
   "社交与激励",
-  "成长闭环",
-  "项目回顾",
+  "作品回顾 · 截图汇总",
 ]
 
 type PhoneProps = {
@@ -125,31 +122,11 @@ function App() {
             <span>休闲养成</span>
             <span>社交互动</span>
           </div>
-        </div>
-        <div className="cover__phones">
-          <Phone src="home.png" className="cover-phone cover-phone--back" />
-          <Phone src="loading.png" className="cover-phone cover-phone--front" />
-          <div className="cover__stamp">
-            <b>{slides.length}</b>
-            <span>SCREENS</span>
-          </div>
-        </div>
-        <div className="cover__note">APP REDESIGN · CONCEPT CASE STUDY</div>
-        <PageMeta n="01" />
-      </section>
-
-      <section className="slide sand" data-index="1">
-        <SlideTitle en="01 / PROJECT CONTEXT">项目背景</SlideTitle>
-        <div className="context-grid">
-          <div className="context-copy">
-            <p className="display-copy">
-              一款以<strong>陪伴、养成与轻社交</strong>为核心的虚拟宠物产品。
+          <div className="cover__context">
+            <p>
+              一款以<strong>陪伴、养成与轻社交</strong>为核心的虚拟宠物产品，把喂养、互动、好友拜访与任务奖励组合成轻量循环。
             </p>
-            <p className="body-copy">
-              YY Pet
-              将喂养、互动、好友拜访与任务奖励组合成轻量循环，帮助用户在短时高频的使用场景中建立情感连接。
-            </p>
-            <div className="stat-row">
+            <div className="cover__stats">
               <div>
                 <b>3–5</b>
                 <span>分钟单次体验</span>
@@ -164,23 +141,21 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="context-visual">
-            <Phone
-              src="ranch.png"
-              className="phone-overlap phone-overlap--one"
-            />
-            <Phone
-              src="home.png"
-              className="phone-overlap phone-overlap--two"
-            />
-            <div className="context-caption">HOME / RANCH</div>
+        </div>
+        <div className="cover__phones">
+          <Phone src="home.png" className="cover-phone cover-phone--back" />
+          <Phone src="loading.png" className="cover-phone cover-phone--front" />
+          <div className="cover__stamp">
+            <b>{slides.length}</b>
+            <span>SCREENS</span>
           </div>
         </div>
-        <PageMeta n="02" />
+        <div className="cover__note">APP REDESIGN · CONCEPT CASE STUDY</div>
+        <PageMeta n="01" />
       </section>
 
-      <section className="slide navy" data-index="2">
-        <SlideTitle en="02 / OPPORTUNITY" light>
+      <section className="slide navy" data-index="1">
+        <SlideTitle en="01 / OPPORTUNITY" light>
           从功能堆叠到情感驱动
         </SlideTitle>
         <div className="opportunity">
@@ -207,11 +182,11 @@ function App() {
             <img src={`${IMG}home.png`} alt="YY Pet home screen detail" />
           </div>
         </div>
-        <PageMeta n="03" dark />
+        <PageMeta n="02" dark />
       </section>
 
-      <section className="slide coral" data-index="3">
-        <SlideTitle en="03 / KEY USER FLOW" light>
+      <section className="slide coral" data-index="2">
+        <SlideTitle en="02 / KEY USER FLOW" light>
           核心任务流
         </SlideTitle>
         <div className="flow-layout">
@@ -241,75 +216,11 @@ function App() {
             </div>
           </div>
         </div>
-        <PageMeta n="04" dark />
+        <PageMeta n="03" dark />
       </section>
 
-      <section className="slide cream" data-index="4">
-        <SlideTitle en="04 / COMPONENT SYSTEM">组件系统</SlideTitle>
-        <div className="system-grid">
-          <div className="system-col">
-            <span className="spec-label">COLOR / 色彩</span>
-            <div className="swatches">
-              {[
-                ["#F7C94B", "SUNNY"],
-                ["#7DCB58", "GROWTH"],
-                ["#F2765C", "ACTION"],
-                ["#17324D", "INK"],
-              ].map(([hex, name]) => (
-                <div key={hex} style={{ background: hex }}>
-                  <span>
-                    {hex}
-                    <small>{name}</small>
-                  </span>
-                </div>
-              ))}
-            </div>
-            <span className="spec-label">TYPE / 字体层级</span>
-            <div className="type-spec">
-              <b>Aa</b>
-              <div>
-                <strong>标题 64 / Bold</strong>
-                <span>正文 24 / Regular</span>
-                <small>12 · 16 · 24 · 40 · 64</small>
-              </div>
-            </div>
-          </div>
-          <div className="system-col system-col--components">
-            <span className="spec-label">UI COMPONENTS / 核心组件</span>
-            <div className="button-spec">
-              <button>Primary action</button>
-              <button>Secondary</button>
-            </div>
-            <div className="resource-card">
-              <i>10</i>
-              <div>
-                <b>Advanced feed</b>
-                <span>Feeding can last 8 hours</span>
-              </div>
-              <button>Buy</button>
-            </div>
-            <div className="status-spec">
-              <span>LEVEL 15</span>
-              <i>
-                <em />
-              </i>
-              <b>80%</b>
-            </div>
-            <div className="radius-notes">
-              <span>R 16</span>
-              <span>R 24</span>
-              <span>R 36</span>
-            </div>
-          </div>
-          <div className="system-preview">
-            <Phone src="daily-task.png" tall />
-          </div>
-        </div>
-        <PageMeta n="05" />
-      </section>
-
-      <section className="slide lavender" data-index="5">
-        <SlideTitle en="05 / VISUAL DIRECTION">设计风格探索</SlideTitle>
+      <section className="slide lavender" data-index="3">
+        <SlideTitle en="03 / VISUAL DIRECTION">设计风格探索</SlideTitle>
         <div className="mood-grid">
           <div className="mood-board">
             <div className="mood-shape mood-shape--a">
@@ -341,11 +252,11 @@ function App() {
           </div>
           <Phone src="loading.png" className="mood-phone" />
         </div>
-        <PageMeta n="06" />
+        <PageMeta n="04" />
       </section>
 
-      <section className="slide sky" data-index="6">
-        <SlideTitle en="06 / CORE EXPERIENCE">围绕宠物的核心体验</SlideTitle>
+      <section className="slide sky" data-index="4">
+        <SlideTitle en="04 / CORE EXPERIENCE">围绕宠物的核心体验</SlideTitle>
         <div className="showcase showcase--three">
           <div className="showcase__phone">
             <Phone src="home.png" />
@@ -369,11 +280,11 @@ function App() {
         <div className="showcase-quote">
           “每一次点击，都让宠物世界更真实一点。”
         </div>
-        <PageMeta n="07" />
+        <PageMeta n="05" />
       </section>
 
-      <section className="slide dark-green" data-index="7">
-        <SlideTitle en="07 / SOCIAL & REWARD" light>
+      <section className="slide dark-green" data-index="5">
+        <SlideTitle en="05 / SOCIAL & REWARD" light>
           社交与激励机制
         </SlideTitle>
         <div className="reward-layout">
@@ -399,66 +310,30 @@ function App() {
             <Phone src="adopt.png" />
           </div>
         </div>
-        <PageMeta n="08" dark />
+        <PageMeta n="06" dark />
       </section>
 
-      <section className="slide peach" data-index="8">
-        <SlideTitle en="08 / GROWTH LOOP">成长体验闭环</SlideTitle>
-        <div className="growth-layout">
-          <div className="growth-ring">
-            <div className="growth-ring__center">
-              <b>GROW</b>
-              <span>持续成长</span>
+      <section className="slide outro" data-index="6">
+        <div className="outro__glow" />
+        <header className="outro__head">
+          <Eyebrow>06 / SELECTED SCREENS</Eyebrow>
+          <h2>让陪伴发生，让成长被看见。</h2>
+        </header>
+        <div className="outro__wall">
+          {[
+            ["home.png", "ranch.png", "indoor.png", "daily-task.png", "shop.png"],
+            ["loading.png", "friends.png", "lucky-draw.png", "adopt.png", "scene.png"],
+          ].map((row, r) => (
+            <div className="outro__row" key={r}>
+              {row.map((src) => (
+                <div className="outro__cell" key={src}>
+                  <Phone src={src} />
+                </div>
+              ))}
             </div>
-            {[
-              ["01", "照顾", "喂养与陪伴"],
-              ["02", "完成", "日常与挑战"],
-              ["03", "获得", "金币与道具"],
-              ["04", "解锁", "宠物与场景"],
-            ].map(([n, title, desc], index) => (
-              <div className={`growth-node node-${index + 1}`} key={n}>
-                <span>{n}</span>
-                <b>{title}</b>
-                <small>{desc}</small>
-              </div>
-            ))}
-          </div>
-          <div className="growth-screens">
-            <Phone src="daily-task.png" tall />
-            <Phone src="scene.png" />
-            <Phone src="shop.png" tall />
-          </div>
+          ))}
         </div>
-        <PageMeta n="09" />
-      </section>
-
-      <section className="slide finale" data-index="9">
-        <div className="finale-collage">
-          <Phone src="loading.png" />
-          <Phone src="home.png" />
-          <Phone src="friends.png" />
-          <Phone src="lucky-draw.png" />
-          <Phone src="scene.png" />
-        </div>
-        <div className="finale-copy">
-          <Eyebrow>09 / PROJECT REFLECTION</Eyebrow>
-          <h2>
-            让陪伴发生，
-            <br />
-            让成长被看见。
-          </h2>
-          <p>
-            YY Pet
-            以更清晰的行为路径、更温暖的视觉反馈与更连续的成长机制，重新组织虚拟宠物的日常体验。
-          </p>
-          <div className="finale-tags">
-            <span>清晰</span>
-            <span>温暖</span>
-            <span>持续</span>
-          </div>
-          <small>THANK YOU FOR WATCHING</small>
-        </div>
-        <PageMeta n="10" dark />
+        <PageMeta n="07" dark />
       </section>
     </main>
   )

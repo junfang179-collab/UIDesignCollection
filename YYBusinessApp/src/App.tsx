@@ -15,9 +15,6 @@ const pages = [
   "项目概览",
   "项目背景",
   "用户调研",
-  "设计策略",
-  "信息架构",
-  "视觉系统",
   "核心体验",
   "成果展示 I",
   "成果展示 II",
@@ -342,201 +339,11 @@ function App() {
         </div>
       </section>
 
-      <section id="slide-4" data-index="3" className="slide strategy-slide">
+      <section id="slide-4" data-index="3" className="slide feature-slide">
         <Meta index={4} dark />
         <div className="content-pad">
           <SectionTitle
-            eyebrow="03 / DESIGN STRATEGY"
-            title="以状态为核心，重组每一个管理动作"
-            note="设计目标不是让系统看起来更简单，而是让复杂业务更容易被理解。"
-            light
-          />
-          <div className="goal-grid">
-            {[
-              [
-                "01",
-                "更快定位",
-                "将签到人数、总工时、异常状态前置呈现，降低扫视与检索成本。",
-                "效率",
-              ],
-              [
-                "02",
-                "更少跳转",
-                "围绕人员对象聚合档案、记录与评价，让任务保持连续。",
-                "连贯",
-              ],
-              [
-                "03",
-                "更强确认",
-                "用状态色、操作反馈与时间记录，让每一步结果都可感知。",
-                "确定",
-              ],
-            ].map(([num, title, text, tag]) => (
-              <article className="goal-card" key={num}>
-                <div className="goal-top">
-                  <span>{num}</span>
-                  <i />
-                </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <b>{tag}</b>
-              </article>
-            ))}
-          </div>
-          <div className="process-track">
-            <span className="process-label">DESIGN PROCESS</span>
-            {["理解业务", "定义问题", "重组结构", "视觉探索", "原型验证"].map(
-              (item, index) => (
-                <div className="process-step" key={item}>
-                  <b>{String(index + 1).padStart(2, "0")}</b>
-                  <span>{item}</span>
-                  {index < 4 && <i />}
-                </div>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section id="slide-5" data-index="4" className="slide sitemap-slide">
-        <Meta index={5} />
-        <div className="content-pad">
-          <SectionTitle
-            eyebrow="04 / INFORMATION ARCHITECTURE"
-            title="从功能堆叠到任务导向的页面地图"
-            note="以“进入工作台—完成管理—回看结果”为主线，建立清晰可预测的导航结构。"
-          />
-          <div className="sitemap">
-            <div className="map-root">
-              YY business <span>企业工作台</span>
-            </div>
-            <div className="map-line horizontal" />
-            <div className="map-columns">
-              {[
-                ["01", "账户与企业", ["登录 / 注册", "企业资料", "品牌信息"]],
-                ["02", "人员与招聘", ["劳务需求", "候选人", "员工档案"]],
-                ["03", "考勤管理", ["签到 / 签出", "实时考勤", "记录历史"]],
-                ["04", "反馈闭环", ["员工评价", "工作记录", "消息通知"]],
-              ].map(([num, title, items], index) => (
-                <div
-                  className={`map-column map-${index + 1}`}
-                  key={String(title)}
-                >
-                  <div className="map-node">
-                    <span>{num as string}</span>
-                    <b>{title as string}</b>
-                  </div>
-                  <div className="map-branch" />
-                  {(items as string[]).map((item) => (
-                    <div className="map-leaf" key={item}>
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="map-principles">
-            <span>架构原则</span>
-            <b>01 · 高频前置</b>
-            <b>02 · 状态聚合</b>
-            <b>03 · 操作可逆</b>
-            <b>04 · 结果可追溯</b>
-          </div>
-        </div>
-      </section>
-
-      <section id="slide-6" data-index="5" className="slide visual-slide">
-        <Meta index={6} />
-        <div className="content-pad">
-          <SectionTitle
-            eyebrow="05 / VISUAL DIRECTION"
-            title="清透、可靠，同时保留服务行业的温度"
-            note="统一色彩、字体、圆角与状态规则，为后续模块扩展建立稳定的视觉基线。"
-          />
-          <div className="visual-grid">
-            <div className="palette-panel">
-              <span className="panel-label">COLOR SYSTEM</span>
-              <div className="swatches">
-                <div className="swatch navy">
-                  <b>#071A35</b>
-                  <span>TRUST</span>
-                </div>
-                <div className="swatch blue">
-                  <b>#148EFF</b>
-                  <span>ACTION</span>
-                </div>
-                <div className="swatch cyan">
-                  <b>#79DEDF</b>
-                  <span>FRESH</span>
-                </div>
-                <div className="swatch snow">
-                  <b>#F4F8FC</b>
-                  <span>CANVAS</span>
-                </div>
-              </div>
-              <div className="status-colors">
-                <span>
-                  <i className="success" /> 已完成
-                </span>
-                <span>
-                  <i className="warning" /> 待处理
-                </span>
-                <span>
-                  <i className="danger" /> 异常
-                </span>
-              </div>
-            </div>
-            <div className="type-panel">
-              <span className="panel-label">TYPOGRAPHY</span>
-              <div className="type-sample">
-                <b>Aa</b>
-                <div>
-                  <strong>Inter</strong>
-                  <span>清晰的数字与英文信息</span>
-                </div>
-              </div>
-              <div className="type-cn">
-                业务信息需要
-                <br />
-                <strong>清晰而有秩序</strong>
-              </div>
-              <div className="type-scale">
-                <span>48 / 标题</span>
-                <span>24 / 正文</span>
-                <span>16 / 标签</span>
-              </div>
-            </div>
-            <div className="component-panel">
-              <span className="panel-label">COMPONENT & RADIUS</span>
-              <button className="sample-button">
-                Confirm attendance <span>→</span>
-              </button>
-              <div className="sample-input">
-                <span>Search ID Number</span>
-                <b>⌕</b>
-              </div>
-              <div className="radius-spec">
-                <div>
-                  08<span>控件</span>
-                </div>
-                <div>
-                  16<span>卡片</span>
-                </div>
-                <div>
-                  24<span>容器</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="slide-7" data-index="6" className="slide feature-slide">
-        <Meta index={7} dark />
-        <div className="content-pad">
-          <SectionTitle
-            eyebrow="06 / KEY EXPERIENCE"
+            eyebrow="03 / KEY EXPERIENCE"
             title="把考勤现场，压缩成一次清晰的决策"
             note="关键数据在首屏完成聚合，员工信息与操作入口保持在当前任务上下文中。"
             light
@@ -573,11 +380,11 @@ function App() {
         </div>
       </section>
 
-      <section id="slide-8" data-index="7" className="slide finale-slide">
-        <Meta index={8} dark />
+      <section id="slide-5" data-index="4" className="slide finale-slide">
+        <Meta index={5} dark />
         <div className="finale-head">
           <div>
-            <span>07 / FINAL OUTCOME · 01</span>
+            <span>04 / FINAL OUTCOME · 01</span>
             <h2>
               核心业务，
               <br />
@@ -620,11 +427,11 @@ function App() {
         </div>
       </section>
 
-      <section id="slide-9" data-index="8" className="slide finale-slide finale-last">
-        <Meta index={9} dark />
+      <section id="slide-6" data-index="5" className="slide finale-slide finale-last">
+        <Meta index={6} dark />
         <div className="finale-head">
           <div>
-            <span>07 / FINAL OUTCOME · 02</span>
+            <span>04 / FINAL OUTCOME · 02</span>
             <h2>
               从工作记录，
               <br />

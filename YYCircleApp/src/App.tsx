@@ -122,8 +122,45 @@ function App() {
           <div className="cover-body">
             <h3>从发现机会，到管理每一份工作</h3>
             <p className="cover-lead">
-              YY Circle 是服务新加坡及周边市场的移动求职平台，聚合临时岗位、全职工作与自由职业机会，并提供班次管理、简历工具、奖励及求职资讯。
+              YY Circle 是 YY Group 旗下的按需灵活人力 / 临时工招聘平台（APP），主打兼职、临时人手撮合
+              + 劳动力管理，市场覆盖新加坡、马来西亚、香港、泰国等地区。
             </p>
+            <div className="cover-split-label">两边定位</div>
+            <div className="cover-split">
+              <div className="cover-split-item">
+                <p className="cover-split-title">
+                  <span>对雇主</span>
+                  酒店 · 餐饮 · 零售 · 服务业
+                </p>
+                <p>
+                  快速招临时 / 兼职人手，支持排班、考勤、工时核算、薪资结算，解决旺季、缺人、临时顶班需求，和
+                  WheelHR、24IFM 打通配合使用。
+                </p>
+              </div>
+              <div className="cover-split-item">
+                <p className="cover-split-title">
+                  <span>对求职者</span>
+                  弹性接单
+                </p>
+                <p>
+                  自主挑选短期兼职、按工时接单，很多岗位可以日结薪酬，弹性上班。
+                </p>
+              </div>
+            </div>
+            <div className="cover-cap">
+              <p className="cover-cap-title">配套能力</p>
+              <div className="cover-cap-tags">
+                <span>AI 匹配岗位</span>
+                <span>人脸考勤</span>
+                <span>工时记录</span>
+                <span>打卡</span>
+                <span>工资单</span>
+                <span>订单管理</span>
+                <span>商家后台</span>
+                <span>求职者端 APP</span>
+                <span>香港 / 马来 / 泰国本地版</span>
+              </div>
+            </div>
             <div className="cover-stats">
               <div>
                 <strong>3</strong>
