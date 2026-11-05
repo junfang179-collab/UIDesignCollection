@@ -1237,3 +1237,219 @@ main {
 body {
   overflow-x: clip;
 }
+
+/* =============================================================
+   2 屏版：平台全貌 / 能力闭环 —— 每屏 1 张大图 + 2 张小图
+   ============================================================= */
+.duo-slide {
+  display: flex;
+  flex-direction: column;
+  padding: 64px 96px 92px;
+}
+
+.duo-head {
+  display: flex;
+  flex: none;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 64px;
+  min-height: 234px;
+}
+
+.duo-head__copy h1 {
+  margin-top: 14px;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.duo-head__copy h1 em {
+  display: block;
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.duo-head__copy h2 {
+  margin-top: 14px;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.duo-head__copy h2 em {
+  color: var(--cyan);
+  font-style: normal;
+}
+
+.duo-head__copy > p {
+  margin-top: 16px;
+  color: #a8c0cc;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+.duo-head__meta {
+  display: flex;
+  gap: 44px;
+  padding-bottom: 10px;
+}
+
+.duo-head__meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.duo-head__meta small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.duo-head__meta strong {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.duo-head__tags {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.duo-wall {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  gap: 24px;
+  margin-top: 26px;
+}
+
+.duo-shot {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+}
+
+.duo-shot--lead {
+  flex: 1.9;
+  border-color: rgba(49, 228, 255, 0.6);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.52);
+}
+
+.duo-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.duo-shot figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 46px 22px 18px;
+  background: linear-gradient(transparent, rgba(6, 16, 25, 0.92) 62%);
+}
+
+.duo-shot figcaption b {
+  color: var(--cyan);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.duo-shot figcaption strong {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.duo-shot figcaption span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.duo-shot--lead figcaption {
+  gap: 16px;
+  padding: 56px 28px 22px;
+}
+
+.duo-shot--lead figcaption b {
+  font-size: 15px;
+}
+
+.duo-shot--lead figcaption strong {
+  font-size: 24px;
+}
+
+.duo-shot--lead figcaption span {
+  font-size: 12px;
+}
+
+.duo-wall__stack {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 20px;
+}
+
+.duo-wall__stack .duo-shot {
+  flex: 1;
+}
+
+.duo-foot {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.duo-foot__stats {
+  display: flex;
+  gap: 36px;
+}
+
+.duo-foot__stats > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.duo-foot__stats b {
+  color: var(--cyan);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.duo-foot__stats span {
+  color: #b7ced8;
+  font-size: 15px;
+}
+
+.duo-foot > p {
+  color: var(--muted);
+  font-size: 15px;
+  text-align: right;
+}
