@@ -16,9 +16,8 @@ const screens = {
 
 const navItems = [
   ['01', '项目背景', 'overview'],
-  ['02', '设计过程', 'process'],
-  ['03', '设计系统', 'system'],
-  ['04', '界面展示', 'screens'],
+  ['02', '视觉系统', 'system'],
+  ['03', '界面展示', 'screens'],
 ]
 
 /** 画布基准尺寸：所有版式按 1920 × 1080 设计，再整体等比缩放 */
@@ -164,7 +163,7 @@ function App() {
               </a>
             ))}
           </div>
-          <div className="nav-meta">UI/UX DESIGN · 2025 · 11 SCREENS</div>
+          <div className="nav-meta">UI/UX DESIGN · 2025 · 07 SCREENS</div>
         </nav>
       </div>
 
@@ -296,207 +295,10 @@ function App() {
           </div>
         </Slide>
 
-        {/* ===== 03 用户研究 ===== */}
-        <Slide kind="s-research">
-          <SectionTitle
-            number="02"
-            eyebrow="USER RESEARCH"
-            title="先理解真实生活，再设计数字路径"
-            intro="围绕“住户为什么打开物业 APP”展开轻量研究，将日常任务、情绪波动和信任因素放在同一张体验地图上。"
-          />
-
-          <div className="research-grid">
-            <article className="method-card">
-              <span className="method-index">01</span>
-              <span className="app-icon">
-                <Icon name="interview" />
-              </span>
-              <h3>半结构访谈</h3>
-              <p>覆盖新住户、家庭用户与活跃社区成员，了解真实使用场景与信息习惯。</p>
-              <b>8 位住户 · 30–45 min</b>
-            </article>
-            <article className="method-card accent">
-              <span className="method-index">02</span>
-              <span className="app-icon">
-                <Icon name="observe" />
-              </span>
-              <h3>任务观察</h3>
-              <p>观察住户完成报修、找保洁和查询账单的路径，记录停顿与回退节点。</p>
-              <b>5 个任务 · 42 个节点</b>
-            </article>
-            <article className="method-card">
-              <span className="method-index">03</span>
-              <span className="app-icon">
-                <Icon name="audit" />
-              </span>
-              <h3>竞品审计</h3>
-              <p>对比社区管理、家政服务与本地生活平台的信息结构及信任表达。</p>
-              <b>6 款产品 · 4 个维度</b>
-            </article>
-          </div>
-
-          <div className="insight-board">
-            <div className="insight-head">
-              <div>
-                <span>KEY FINDINGS</span>
-                <h3>
-                  用户需要的不是更多功能，
-                  <br />
-                  而是更少的判断成本。
-                </h3>
-              </div>
-              <p>“我只想知道现在要做什么、要付多少钱，以及事情有没有在进行。”</p>
-            </div>
-            <div className="insight-content">
-              <div className="persona-card">
-                <div className="persona-avatar">
-                  <span>JL</span>
-                </div>
-                <div>
-                  <small>PRIMARY PERSONA</small>
-                  <h4>Jasmine Lee</h4>
-                  <p>34 岁 · 两口之家 · 新公寓住户</p>
-                </div>
-                <blockquote>“我不介意在线处理事务，但每一步都要让我知道接下来会发生什么。”</blockquote>
-              </div>
-              <div className="finding-list">
-                {[
-                  ['72%', '希望首页直接呈现待处理事项'],
-                  ['68%', '会优先选择价格明确的服务'],
-                  ['61%', '担心线上预约后无人跟进'],
-                  ['54%', '依赖社区动态了解邻里信息'],
-                ].map(([n, text], i) => (
-                  <div className="finding" key={text}>
-                    <span>{n}</span>
-                    <p>{text}</p>
-                    <i
-                      style={
-                        {
-                          '--w': `${[88, 78, 70, 62][i]}%`,
-                        } as React.CSSProperties
-                      }
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Slide>
-
-        {/* ===== 04 设计目标 ===== */}
-        <Slide id="process" kind="s-goals">
-          <SectionTitle number="03" eyebrow="DESIGN GOALS" title="把复杂系统，转化为三种明确感受" />
-
-          <div className="goal-grid">
-            <article>
-              <span>01</span>
-              <div className="goal-symbol">
-                <Icon name="speed" size={26} />
-              </div>
-              <h3>快速</h3>
-              <h4>Fast to act</h4>
-              <p>首屏聚焦高频入口与待办，让用户在最短路径内开始任务。</p>
-            </article>
-            <article>
-              <span>02</span>
-              <div className="goal-symbol">
-                <Icon name="clear" size={26} />
-              </div>
-              <h3>清晰</h3>
-              <h4>Clear to understand</h4>
-              <p>统一卡片层级、价格语言与状态表达，降低判断和学习成本。</p>
-            </article>
-            <article>
-              <span>03</span>
-              <div className="goal-symbol">
-                <Icon name="trust" size={26} />
-              </div>
-              <h3>可信</h3>
-              <h4>Safe to trust</h4>
-              <p>通过固定报价、保障标签与过程反馈，建立服务交易的安全感。</p>
-            </article>
-          </div>
-
-          <div className="process-flow">
-            <div className="process-copy">
-              <span>DESIGN PROCESS</span>
-              <h3>从问题定义到视觉交付</h3>
-              <p>以双钻模型推进，在每个阶段保留可回溯的依据，并通过任务验证不断收敛方案。</p>
-            </div>
-            <div className="diamonds">
-              {[
-                ['01', 'DISCOVER', '访谈 / 观察'],
-                ['02', 'DEFINE', '洞察 / 定义'],
-                ['03', 'DEVELOP', '原型 / 测试'],
-                ['04', 'DELIVER', '系统 / 交付'],
-              ].map(([n, t, d]) => (
-                <div className="diamond-item" key={t}>
-                  <div>
-                    <span>{n}</span>
-                    <b>{t}</b>
-                    <small>{d}</small>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Slide>
-
-        {/* ===== 05 信息架构 ===== */}
-        <Slide kind="s-arch">
-          <SectionTitle
-            number="04"
-            eyebrow="INFORMATION ARCHITECTURE"
-            title="围绕居民任务，重组产品结构"
-            intro="将原先以物业部门划分的功能，转换为用户可理解的生活场景；首页负责触达，二级页负责选择，详情页负责决策。"
-            light
-          />
-
-          <div className="site-map" aria-label="24iFM 页面地图">
-            <div className="map-root">
-              24iFM<span>Resident Hub</span>
-            </div>
-            <div className="map-trunk" />
-            <div className="map-columns">
-              {[
-                ['首页 Home', ['待办提醒', '快捷入口', '社区动态', '热门服务']],
-                ['服务 Services', ['服务搜索', '分类浏览', '服务详情', '预约记录']],
-                ['社区 Community', ['Notice Board', 'Social Wall', 'Marketplace', '互动消息']],
-                ['物业 Property', ['账单支付', '设施预约', '访客登记', '房产信息']],
-                ['我的 Profile', ['住户档案', '家庭成员', '通知设置', '安全退出']],
-              ].map(([title, children]) => (
-                <div className="map-column" key={title as string}>
-                  <h3>{title as string}</h3>
-                  {(children as string[]).map((child) => (
-                    <div key={child}>{child}</div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="journey">
-            <div className="journey-label">
-              <span>CORE JOURNEY</span>
-              <h3>预约家政服务</h3>
-              <p>从意图到完成，每一步都有清楚的预期。</p>
-            </div>
-            <div className="journey-steps">
-              {['发现服务', '比较分类', '查看定价', '选择时段', '确认预约'].map((step, i) => (
-                <div key={step}>
-                  <span>0{i + 1}</span>
-                  <b>{step}</b>
-                  {i < 4 && <Arrow />}
-                </div>
-              ))}
-            </div>
-          </div>
-        </Slide>
-
-        {/* ===== 06 视觉方向 ===== */}
+        {/* ===== 03 视觉方向 ===== */}
         <Slide id="system" kind="s-visual">
           <SectionTitle
-            number="05"
+            number="02"
             eyebrow="VISUAL DIRECTION"
             title="亲和的效率感，可靠的生活感"
             intro="用清透蓝色承载服务效率，以深海军蓝建立秩序感；圆角、柔和阴影和充足留白让复杂内容保持轻盈。"
@@ -600,11 +402,11 @@ function App() {
           </div>
         </Slide>
 
-        {/* ===== 07 首页 ===== */}
+        {/* ===== 04 首页 ===== */}
         <Slide id="screens" kind="s-showcase" flush>
           <div className="showcase-copy">
             <SectionTitle
-              number="06"
+              number="03"
               eyebrow="KEY SCREEN · HOME"
               title={
                 <>
@@ -643,10 +445,10 @@ function App() {
           <span className="giant-word">HOME</span>
         </Slide>
 
-        {/* ===== 08 服务流程 ===== */}
-        <Slide kind="s-service">
+        {/* ===== 05 服务流程 ===== */}
+        <Slide id="service" kind="s-service">
           <div className="service-head">
-            <SectionTitle number="07" eyebrow="SERVICE JOURNEY" title="从发现到决策，价格始终透明" />
+            <SectionTitle number="04" eyebrow="SERVICE JOURNEY" title="从发现到决策，价格始终透明" />
             <p>服务列表强化类别与保障，详情页把固定价格、服务范围和增值项完整展开，减少预约前的不确定性。</p>
           </div>
 
@@ -677,11 +479,11 @@ function App() {
           </div>
         </Slide>
 
-        {/* ===== 09 预约流程 ===== */}
-        <Slide kind="s-booking">
+        {/* ===== 06 预约流程 ===== */}
+        <Slide id="booking" kind="s-booking">
           <div className="booking-head">
             <SectionTitle
-              number="08"
+              number="05"
               eyebrow="BOOKING FLOW"
               title="将复杂下单，拆成五个简单选择"
               intro="从服务类型到最终确认，每一步只处理一个关键决策；价格随选择实时更新，让用户始终清楚当前进度与费用。"
@@ -722,10 +524,10 @@ function App() {
           </div>
         </Slide>
 
-        {/* ===== 10 更多界面 ===== */}
-        <Slide kind="s-gallery">
+        {/* ===== 07 更多界面 ===== */}
+        <Slide id="gallery" kind="s-gallery">
           <SectionTitle
-            number="09"
+            number="06"
             eyebrow="MORE SCREENS"
             title="一个系统，多种生活触点"
             intro="登录、社区与个人中心沿用相同的视觉语法，在不同信息密度下维持一致体验。"
@@ -765,49 +567,6 @@ function App() {
           </div>
         </Slide>
 
-        {/* ===== 11 结论 ===== */}
-        <Slide kind="s-outcome" flush>
-          <div className="outcome-top">
-            <SectionTitle number="10" eyebrow="OUTCOME & REFLECTION" title="设计的终点，是让生活少一点摩擦" light />
-            <p>
-              通过统一信息结构、透明服务语言与可扩展的视觉系统，24iFM
-              从“物业工具”转变为真正面向住户的社区生活入口。
-            </p>
-          </div>
-
-          <div className="outcome-metrics">
-            <div>
-              <span>01</span>
-              <strong>更快</strong>
-              <p>高频任务从首页直接触达</p>
-            </div>
-            <div>
-              <span>02</span>
-              <strong>更清楚</strong>
-              <p>复杂服务变成可比较的信息</p>
-            </div>
-            <div>
-              <span>03</span>
-              <strong>更安心</strong>
-              <p>关键决策都有反馈和保障</p>
-            </div>
-          </div>
-
-          <footer>
-            <div className="footer-logo">
-              24<span>iFM</span>
-            </div>
-            <h2>
-              Thank you
-              <br />
-              <em>for viewing.</em>
-            </h2>
-            <a href="#top">
-              返回顶部 <span>↑</span>
-            </a>
-            <p>UI/UX PORTFOLIO · CASE STUDY 2025</p>
-          </footer>
-        </Slide>
       </main>
     </>
   )

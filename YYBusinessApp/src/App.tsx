@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
 
-import workspace from "./assets/yy-business/01-workspace.png"
-import history from "./assets/yy-business/02-history.png"
-import login from "./assets/yy-business/03-login.png"
-import company from "./assets/yy-business/04-company.png"
-import attendance from "./assets/yy-business/05-attendance.png"
-import profile from "./assets/yy-business/06-profile.png"
-import reviewDetail from "./assets/yy-business/07-review-detail.png"
-import qr from "./assets/yy-business/08-qr.png"
-import writeReview from "./assets/yy-business/09-write-review.png"
-import notification from "./assets/yy-business/10-notification.png"
+const workspace = "/YYBusinessApp/assets/yy-business/01-workspace.png"
+const history = "/YYBusinessApp/assets/yy-business/02-history.png"
+const login = "/YYBusinessApp/assets/yy-business/03-login.png"
+const company = "/YYBusinessApp/assets/yy-business/04-company.png"
+const attendance = "/YYBusinessApp/assets/yy-business/05-attendance.png"
+const profile = "/YYBusinessApp/assets/yy-business/06-profile.png"
+const reviewDetail = "/YYBusinessApp/assets/yy-business/07-review-detail.png"
+const qr = "/YYBusinessApp/assets/yy-business/08-qr.png"
+const writeReview = "/YYBusinessApp/assets/yy-business/09-write-review.png"
+const notification = "/YYBusinessApp/assets/yy-business/10-notification.png"
 
 const pages = [
   "项目概览",

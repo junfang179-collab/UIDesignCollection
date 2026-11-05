@@ -6,10 +6,6 @@ const slides = [
   "封面",
   "项目背景",
   "机会洞察",
-  "设计流程",
-  "用户调研",
-  "设计目标",
-  "信息架构",
   "核心任务流",
   "组件系统",
   "风格探索",
@@ -40,7 +36,7 @@ function PageMeta({ n, dark = false }: { n: string; dark?: boolean }) {
   return (
     <div className={`page-meta ${dark ? "page-meta--dark" : ""}`}>
       <span>YY PET · UX/UI CASE STUDY</span>
-      <span>{n} / 14</span>
+      <span>{n} / {String(slides.length).padStart(2, "0")}</span>
     </div>
   )
 }
@@ -111,7 +107,7 @@ function App() {
             />
           ))}
         </div>
-        <span className="pager__total">14</span>
+        <span className="pager__total">{String(slides.length).padStart(2, "0")}</span>
       </nav>
 
       <section className="slide cover" data-index="0">
@@ -134,7 +130,7 @@ function App() {
           <Phone src="home.png" className="cover-phone cover-phone--back" />
           <Phone src="loading.png" className="cover-phone cover-phone--front" />
           <div className="cover__stamp">
-            <b>14</b>
+            <b>{slides.length}</b>
             <span>SCREENS</span>
           </div>
         </div>
@@ -214,168 +210,8 @@ function App() {
         <PageMeta n="03" dark />
       </section>
 
-      <section className="slide cream" data-index="3">
-        <SlideTitle en="03 / DESIGN PROCESS">设计流程拆解</SlideTitle>
-        <div className="process">
-          <div className="process__line" />
-          {[
-            ["01", "发现", "Discover", "界面审计", "竞品扫描", "用户访谈"],
-            ["02", "定义", "Define", "问题聚类", "体验原则", "关键指标"],
-            ["03", "发散", "Develop", "用户旅程", "信息架构", "低保真原型"],
-            ["04", "交付", "Deliver", "视觉规范", "组件系统", "可用性验证"],
-          ].map(([n, cn, en, a, b, c]) => (
-            <article className="process__step" key={n}>
-              <div className="process__num">{n}</div>
-              <p>{en}</p>
-              <h3>{cn}</h3>
-              <ul>
-                <li>{a}</li>
-                <li>{b}</li>
-                <li>{c}</li>
-              </ul>
-            </article>
-          ))}
-        </div>
-        <div className="process__foot">
-          <b>双钻设计模型</b>
-          <span>从真实问题出发，以持续验证收敛方案</span>
-        </div>
-        <PageMeta n="04" />
-      </section>
-
-      <section className="slide mint" data-index="4">
-        <SlideTitle en="04 / USER RESEARCH">用户调研分析</SlideTitle>
-        <div className="research-grid">
-          <div className="persona-card">
-            <div className="persona-card__avatar">L</div>
-            <div>
-              <span>PRIMARY PERSONA</span>
-              <h3>林小羽 · 24岁</h3>
-              <p>初入职场 / 休闲游戏用户</p>
-            </div>
-            <blockquote>
-              “我会在通勤和午休打开它，但希望不用思考太久，就知道宠物需要什么。”
-            </blockquote>
-            <div className="persona-tags">
-              <span>情绪陪伴</span>
-              <span>低学习成本</span>
-              <span>轻社交</span>
-            </div>
-          </div>
-          <div className="research-data">
-            <p className="research-intro">
-              通过 <b>8</b> 次半结构访谈与 <b>32</b> 份问卷，归纳高频诉求
-            </p>
-            {[
-              ["希望快速完成每日互动", "78%"],
-              ["重视宠物成长的即时反馈", "72%"],
-              ["愿意访问好友获得奖励", "59%"],
-              ["对随机奖励保持兴趣", "47%"],
-            ].map(([label, value], index) => (
-              <div className="bar-row" key={label}>
-                <div>
-                  <span>{label}</span>
-                  <b>{value}</b>
-                </div>
-                <i>
-                  <em style={{ width: value }} />
-                </i>
-                <small>0{index + 1}</small>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="insight-strip">
-          <b>核心洞察</b>
-          <span>
-            用户不是追求复杂玩法，而是在寻找“轻投入也能被回应”的陪伴感。
-          </span>
-        </div>
-        <PageMeta n="05" />
-      </section>
-
-      <section className="slide yellow" data-index="5">
-        <SlideTitle en="05 / DESIGN GOALS">设计目标</SlideTitle>
-        <div className="goal-grid">
-          {[
-            [
-              "01",
-              "更清楚",
-              "让下一步行动一眼可见",
-              "强化核心操作层级，降低入口噪音。",
-            ],
-            [
-              "02",
-              "更有感",
-              "让每次互动都得到回应",
-              "用状态、动效与奖励建立情绪反馈。",
-            ],
-            [
-              "03",
-              "更连续",
-              "让行为自然进入成长循环",
-              "串联任务、资源、社交与长期目标。",
-            ],
-          ].map(([n, title, lead, body]) => (
-            <article key={n}>
-              <span className="goal-num">{n}</span>
-              <div className="goal-icon">
-                <i />
-                <i />
-                <i />
-              </div>
-              <h3>{title}</h3>
-              <b>{lead}</b>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-        <div className="goal-footer">
-          <span>DESIGN PRINCIPLE</span>
-          <b>Clear action · Warm feedback · Continuous growth</b>
-        </div>
-        <PageMeta n="06" />
-      </section>
-
-      <section className="slide white" data-index="6">
-        <SlideTitle en="06 / INFORMATION ARCHITECTURE">
-          结构优化 · 页面地图
-        </SlideTitle>
-        <div className="sitemap">
-          <div className="sitemap__root">YY PET</div>
-          <div className="sitemap__stem" />
-          {[
-            ["首页", "Home", ["宠物状态", "快捷操作", "资源信息"]],
-            ["成长", "Growth", ["每日任务", "成就进度", "场景解锁"]],
-            ["社交", "Social", ["好友列表", "牧场拜访", "互动记录"]],
-            ["商城", "Store", ["饲料道具", "资源兑换", "幸运抽奖"]],
-          ].map(([cn, en, children], index) => (
-            <article
-              className={`sitemap__branch branch-${index + 1}`}
-              key={cn as string}
-            >
-              <div className="sitemap__top">
-                <b>{cn as string}</b>
-                <span>{en as string}</span>
-              </div>
-              {(children as string[]).map((child) => (
-                <div className="sitemap__node" key={child}>
-                  {child}
-                </div>
-              ))}
-            </article>
-          ))}
-        </div>
-        <div className="sitemap__legend">
-          <span className="dot dot--primary" />
-          一级核心模块 <span className="dot" />
-          二级功能页
-        </div>
-        <PageMeta n="07" />
-      </section>
-
-      <section className="slide coral" data-index="7">
-        <SlideTitle en="07 / KEY USER FLOW" light>
+      <section className="slide coral" data-index="3">
+        <SlideTitle en="03 / KEY USER FLOW" light>
           核心任务流
         </SlideTitle>
         <div className="flow-layout">
@@ -405,11 +241,11 @@ function App() {
             </div>
           </div>
         </div>
-        <PageMeta n="08" dark />
+        <PageMeta n="04" dark />
       </section>
 
-      <section className="slide cream" data-index="8">
-        <SlideTitle en="08 / COMPONENT SYSTEM">组件系统</SlideTitle>
+      <section className="slide cream" data-index="4">
+        <SlideTitle en="04 / COMPONENT SYSTEM">组件系统</SlideTitle>
         <div className="system-grid">
           <div className="system-col">
             <span className="spec-label">COLOR / 色彩</span>
@@ -469,11 +305,11 @@ function App() {
             <Phone src="daily-task.png" tall />
           </div>
         </div>
-        <PageMeta n="09" />
+        <PageMeta n="05" />
       </section>
 
-      <section className="slide lavender" data-index="9">
-        <SlideTitle en="09 / VISUAL DIRECTION">设计风格探索</SlideTitle>
+      <section className="slide lavender" data-index="5">
+        <SlideTitle en="05 / VISUAL DIRECTION">设计风格探索</SlideTitle>
         <div className="mood-grid">
           <div className="mood-board">
             <div className="mood-shape mood-shape--a">
@@ -505,11 +341,11 @@ function App() {
           </div>
           <Phone src="loading.png" className="mood-phone" />
         </div>
-        <PageMeta n="10" />
+        <PageMeta n="06" />
       </section>
 
-      <section className="slide sky" data-index="10">
-        <SlideTitle en="10 / CORE EXPERIENCE">围绕宠物的核心体验</SlideTitle>
+      <section className="slide sky" data-index="6">
+        <SlideTitle en="06 / CORE EXPERIENCE">围绕宠物的核心体验</SlideTitle>
         <div className="showcase showcase--three">
           <div className="showcase__phone">
             <Phone src="home.png" />
@@ -533,11 +369,11 @@ function App() {
         <div className="showcase-quote">
           “每一次点击，都让宠物世界更真实一点。”
         </div>
-        <PageMeta n="11" />
+        <PageMeta n="07" />
       </section>
 
-      <section className="slide dark-green" data-index="11">
-        <SlideTitle en="11 / SOCIAL & REWARD" light>
+      <section className="slide dark-green" data-index="7">
+        <SlideTitle en="07 / SOCIAL & REWARD" light>
           社交与激励机制
         </SlideTitle>
         <div className="reward-layout">
@@ -563,11 +399,11 @@ function App() {
             <Phone src="adopt.png" />
           </div>
         </div>
-        <PageMeta n="12" dark />
+        <PageMeta n="08" dark />
       </section>
 
-      <section className="slide peach" data-index="12">
-        <SlideTitle en="12 / GROWTH LOOP">成长体验闭环</SlideTitle>
+      <section className="slide peach" data-index="8">
+        <SlideTitle en="08 / GROWTH LOOP">成长体验闭环</SlideTitle>
         <div className="growth-layout">
           <div className="growth-ring">
             <div className="growth-ring__center">
@@ -593,10 +429,10 @@ function App() {
             <Phone src="shop.png" tall />
           </div>
         </div>
-        <PageMeta n="13" />
+        <PageMeta n="09" />
       </section>
 
-      <section className="slide finale" data-index="13">
+      <section className="slide finale" data-index="9">
         <div className="finale-collage">
           <Phone src="loading.png" />
           <Phone src="home.png" />
@@ -605,7 +441,7 @@ function App() {
           <Phone src="scene.png" />
         </div>
         <div className="finale-copy">
-          <Eyebrow>14 / PROJECT REFLECTION</Eyebrow>
+          <Eyebrow>09 / PROJECT REFLECTION</Eyebrow>
           <h2>
             让陪伴发生，
             <br />
@@ -622,7 +458,7 @@ function App() {
           </div>
           <small>THANK YOU FOR WATCHING</small>
         </div>
-        <PageMeta n="14" dark />
+        <PageMeta n="10" dark />
       </section>
     </main>
   )
