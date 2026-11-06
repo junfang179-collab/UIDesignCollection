@@ -1,49 +1,41 @@
 import { useEffect, useState } from "react"
 
 const assets = {
-  home: "/assets/yyforce-home.png",
-  circle: "/assets/yyforce-circle.png",
-  facilities: "/assets/yyforce-facilities.png",
-  analytics: "/assets/yyforce-analytics.png",
-  leadership: "/assets/yyforce-leadership.png",
-  contact: "/assets/yyforce-contact.png",
+  home: "/assets/yyforce-home.jpg",
+  about: "/assets/yyforce-about.jpg",
+  services: "/assets/yyforce-services.jpg",
+  technology: "/assets/yyforce-technology.jpg",
+  news: "/assets/yyforce-news.jpg",
 }
 
 const atlas = [
   {
-    src: assets.circle,
-    alt: "YY Circle 产品页面",
-    title: "按需用工",
-    en: "YY CIRCLE",
-    note: "匹配 · 排班 · 履约，串成一条旅程",
+    src: assets.services,
+    alt: "YYFORCE Services 服务页面",
+    title: "服务矩阵",
+    en: "SERVICES",
+    note: "三组能力共用一套卡片模板，跨业务可对照阅读",
   },
   {
-    src: assets.facilities,
-    alt: "24IFM 设施运营页面",
-    title: "设施运营",
-    en: "24IFM",
-    note: "工单、人员与现场服务统一",
+    src: assets.about,
+    alt: "YYFORCE About Us 页面",
+    title: "信任叙事",
+    en: "ABOUT US",
+    note: "里程碑时间轴 + 团队网格，把长文拆成可扫读的证据",
   },
   {
-    src: assets.analytics,
-    alt: "AI 视频分析页面",
-    title: "AI 视频洞察",
-    en: "AI VIDEO ANALYTICS",
-    note: "既有摄像头转为实时预警",
+    src: assets.technology,
+    alt: "YYFORCE Technology 页面",
+    title: "技术图鉴",
+    en: "TECHNOLOGY",
+    note: "产品图 / 规格 / 案例分层，复杂参数渐进披露",
   },
   {
-    src: assets.leadership,
-    alt: "YYFORCE 领导团队页面",
-    title: "团队背书",
-    en: "LEADERSHIP",
-    note: "14 位成员，统一影像与网格",
-  },
-  {
-    src: assets.contact,
-    alt: "YYFORCE 联系页面",
-    title: "咨询转化",
-    en: "CONTACT",
-    note: "需求先分流，再进统一表单",
+    src: assets.news,
+    alt: "YYFORCE News 页面",
+    title: "内容索引",
+    en: "NEWS",
+    note: "搜索与年份筛选 + 统一卡片栅格，内容可持续扩展",
   },
 ]
 
@@ -200,12 +192,12 @@ export default function App() {
           <div className="cover-about">
             <span className="cover-about__label">ABOUT YYFORCE / 集团简介</span>
             <p>
-              YYFORCE 是连接企业与一线劳动者的人力与科技服务集团。以 <span className="nowrap">YY Circle</span> 承载按需用工，以 <span className="nowrap">24IFM</span> 打通设施运营，并把机器人与 <span className="nowrap">AI 视频分析</span> 带入现场管理——多条业务线在同一品牌体系下协同，为企业提供从人到空间的一体化服务。
+              YYFORCE Inc.（NASDAQ: YFOR）是技术驱动的人力解决方案与综合设施管理集团。以 <span className="nowrap">YY Circle</span> 连接企业与灵活就业者，以 <span className="nowrap">24iFM</span> 统筹现场服务，并以 <span className="nowrap">Yolara AI</span> 与人形机器人实验室推进智能化，服务网络覆盖 12 个市场。
             </p>
             <div className="cover-about__tags">
-              <span>WORKFORCE SOLUTIONS</span>
+              <span>WORKFORCE PLATFORM</span>
               <i>/</i>
-              <span>FACILITY OPERATIONS</span>
+              <span>INTEGRATED FACILITIES</span>
               <i>/</i>
               <span>AI &amp; ROBOTICS</span>
             </div>
@@ -235,17 +227,16 @@ export default function App() {
       </section>
 
       <section id="atlas" className="slide atlas-slide dark">
-        <SlideHeader number="01" title="产品与体验全景 / EXPERIENCE ATLAS" />
+        <SlideHeader number="01" title="页面类型与设计语法 / PAGE SYSTEM" />
         <div className="atlas-head">
           <div>
-            <Eyebrow light>ONE SYSTEM · FIVE TOUCHPOINTS</Eyebrow>
+            <Eyebrow light>ONE SYSTEM · FOUR PAGE TYPES</Eyebrow>
             <h2>
-              一套语言，<span>走完整个旅程。</span>
+              一套语法，<span>覆盖四类页面。</span>
             </h2>
           </div>
           <p>
-            从按需用工、设施运营到 AI
-            洞察，再到团队背书与咨询转化；五个页面共用同一套首屏结构、能力卡片与行动路径，让多元业务始终读起来像同一个品牌。
+            从服务矩阵、品牌叙事到技术图鉴与内容索引：共用导航、栅格与卡片语言，只按信息密度和证据类型做差异，让多元业务读起来始终像同一个产品。
           </p>
         </div>
         <div className="atlas-wall">
@@ -269,40 +260,102 @@ export default function App() {
           ))}
         </div>
         <div className="atlas-flow">
-          <span>WORKFORCE</span>
+          <span>INFORMATION ARCHITECTURE</span>
           <i>→</i>
-          <span>FACILITY OPS</span>
+          <span>COMPONENTS</span>
           <i>→</i>
-          <span>AI ANALYTICS</span>
+          <span>CONTENT PATTERN</span>
           <i>→</i>
-          <span>TRUST</span>
-          <i>→</i>
-          <span>CONVERSION</span>
-          <em>REUSABLE STRUCTURE · CONSISTENT CTA</em>
+          <span>CTA</span>
+          <em>ONE NAV · ONE GRID · ONE BUTTON</em>
         </div>
       </section>
 
       <section id="outcome" className="slide outcome-slide dark">
-        <div className="outcome-collage" aria-hidden="true">
-          <div>
-            <img src={assets.home} alt="" />
-          </div>
-          <div>
-            <img src={assets.circle} alt="" />
-          </div>
-          <div>
-            <img src={assets.analytics} alt="" />
-          </div>
-        </div>
         <div className="outcome-overlay" />
+        <div className="outcome-spec">
+          <span className="spec-label">DESIGN SYSTEM / 设计交付</span>
+          <h3>可复用的界面底座</h3>
+          <div className="spec-block">
+            <b>COLOR TOKENS</b>
+            <div className="spec-swatches">
+              <div>
+                <i style={{ background: "#08111c" }} />
+                <span>#08111C</span>
+                <small>Base / Dark</small>
+              </div>
+              <div>
+                <i style={{ background: "#29a7e4" }} />
+                <span>#29A7E4</span>
+                <small>Accent / CTA</small>
+              </div>
+              <div>
+                <i style={{ background: "#eaf4fa" }} />
+                <span>#EAF4FA</span>
+                <small>Text / Light</small>
+              </div>
+            </div>
+          </div>
+          <div className="spec-block">
+            <b>TYPE SCALE</b>
+            <div className="spec-type">
+              <div>
+                <span>64</span> Hero / 页面标题
+              </div>
+              <div>
+                <span>40</span> Section / 分区标题
+              </div>
+              <div>
+                <span>16</span> Body / 正文
+              </div>
+              <div>
+                <span>12</span> Caption / 标签
+              </div>
+            </div>
+          </div>
+          <div className="spec-block">
+            <b>COMPONENT LIBRARY</b>
+            <div className="spec-chips">
+              <span>HERO</span>
+              <span>SECTION HEAD</span>
+              <span>CARD</span>
+              <span>TIMELINE</span>
+              <span>MEDIA GRID</span>
+              <span>CTA BUTTON</span>
+            </div>
+          </div>
+          <p className="spec-foot">12-COL GRID · 8PT SPACING · WCAG AA CONTRAST</p>
+        </div>
+        <div className="outcome-deliverables">
+          <article>
+            <b>01</b>
+            <strong>IA MAP</strong>
+            <span>站点地图与角色路径</span>
+          </article>
+          <article>
+            <b>02</b>
+            <strong>WIREFRAME</strong>
+            <span>四类页面模板与栅格</span>
+          </article>
+          <article>
+            <b>03</b>
+            <strong>UI KIT</strong>
+            <span>色彩 / 字阶 / 组件库</span>
+          </article>
+          <article>
+            <b>04</b>
+            <strong>RESPONSIVE</strong>
+            <span>断点规则与适配规范</span>
+          </article>
+        </div>
         <div className="outcome-copy">
-          <Eyebrow light>项目总结 / OUTCOME</Eyebrow>
+          <Eyebrow light>项目总结 / DESIGN OUTCOME</Eyebrow>
           <h2>
-            从业务集合，
-            <br />到<span>清晰、有力的品牌系统。</span>
+            把复杂业务，
+            <br />收进<span>一套界面语言。</span>
           </h2>
           <p>
-            最终方案以可复用的结构承载多元业务，让品牌表达更统一、产品价值更易理解、用户行动路径更明确。
+            五类页面共用导航、栅格与组件库；内容按「先结论、再证据、后参数」分层，让首次访问者能扫读、决策者能深入、新页面能直接沿用。
           </p>
           <div className="outcome-results">
             <div>
@@ -310,23 +363,23 @@ export default function App() {
               <span>
                 统一
                 <br />
-                品牌认知
+                信息架构
               </span>
             </div>
             <div>
               <b>02</b>
               <span>
-                提升
+                复用
                 <br />
-                信息效率
+                组件系统
               </span>
             </div>
             <div>
               <b>03</b>
               <span>
-                支持
+                明确
                 <br />
-                持续扩展
+                转化路径
               </span>
             </div>
           </div>

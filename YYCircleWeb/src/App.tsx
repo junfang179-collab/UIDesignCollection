@@ -1,27 +1,52 @@
 import { useEffect, useRef, useState } from "react"
 
 const screens = [
-  { id: "cover", label: "封面" },
-  { id: "brief", label: "设计命题" },
-  { id: "home", label: "首页策略" },
-  { id: "worker", label: "求职者旅程" },
-  { id: "employer", label: "雇主转化" },
-  { id: "ecosystem", label: "双端生态" },
-  { id: "system", label: "页面矩阵" },
-  { id: "closing", label: "项目总结" },
+  { id: "intro", label: "品牌与首页" },
+  { id: "roles", label: "双端旅程" },
+  { id: "journey", label: "转化闭环" },
 ]
 
-const pages = [
-  { src: "/yycircle/home.png", name: "Homepage", cn: "品牌首页" },
-  { src: "/yycircle/worker.png", name: "For Worker", cn: "灵活就业" },
-  { src: "/yycircle/employer.png", name: "For Employer", cn: "企业服务" },
+const roles = [
   {
-    src: "/yycircle/employer-overview.png",
-    name: "Hire Workers",
-    cn: "人才匹配",
+    no: "01",
+    tag: "FOR JOB SEEKER",
+    en: "WORKER JOURNEY",
+    title: "随时开工",
+    src: "/yycircle/worker.png",
+    points: ["按时间与地点挑岗位", "资料驱动岗位推荐", "完成班次累积奖励"],
   },
-  { src: "/yycircle/get-started.png", name: "Get Started", cn: "下载引导" },
-  { src: "/yycircle/hire-worker.png", name: "Request Staff", cn: "快速获客" },
+  {
+    no: "02",
+    tag: "FOR BUSINESS",
+    en: "EMPLOYER CONVERSION",
+    title: "即刻补员",
+    src: "/yycircle/employer.png",
+    points: ["智能匹配候选档案", "履历与雇主评分可见", "提交需求快速到岗"],
+  },
+]
+
+const conversions = [
+  {
+    no: "01",
+    title: "Hire Workers",
+    cn: "人才匹配",
+    note: "按评价与经验筛选合适人选",
+    src: "/yycircle/employer-overview.png",
+  },
+  {
+    no: "02",
+    title: "Request Staff",
+    cn: "快速获客",
+    note: "提交用人需求，直达询盘",
+    src: "/yycircle/hire-worker.png",
+  },
+  {
+    no: "03",
+    title: "Get Started",
+    cn: "下载引导",
+    note: "下载 App，开始接单与赚奖励",
+    src: "/yycircle/get-started.png",
+  },
 ]
 
 function Mark({ light = false }: { light?: boolean }) {
@@ -48,7 +73,7 @@ function SlideHead({
     <header className={`slide-head ${light ? "is-light" : ""}`}>
       <Mark light={light} />
       <span className="eyebrow">{eyebrow}</span>
-      <span className="slide-index">{index} / 08</span>
+      <span className="slide-index">{index} / 03</span>
     </header>
   )
 }
@@ -58,6 +83,31 @@ function ArrowIcon() {
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 12h13M13 6l6 6-6 6" />
     </svg>
+  )
+}
+
+function Frame({
+  src,
+  url,
+  children,
+}: {
+  src: string
+  url: string
+  children?: React.ReactNode
+}) {
+  return (
+    <div className="tc-frame">
+      <div className="tc-frame-bar">
+        <span />
+        <span />
+        <span />
+        <b>{url}</b>
+      </div>
+      <div className="tc-frame-view">
+        <img src={src} alt={`${url} 页面截图`} />
+      </div>
+      {children}
+    </div>
   )
 }
 
@@ -141,416 +191,151 @@ function App() {
       </nav>
 
       <main ref={deckRef} className="deck">
-        <section id="cover" className="slide slide-cover">
-          <div className="slide-canvas cover-grid">
-            <div className="cover-copy">
+        <section id="intro" className="slide slide-cover tc-slide">
+          <div className="slide-canvas tc-canvas tc-intro">
+            <header className="tc-top">
               <Mark light />
-              <div className="cover-kicker">UI / UX CASE STUDY · 2026</div>
-              <h1>
-                让每一次
-                <br />
-                <em>灵活匹配</em>更高效
-              </h1>
-              <p>
-                YY Circle 官网体验重构
-                <br />
-                双边用工平台的品牌表达与转化设计
-              </p>
-              <button className="cover-cta" onClick={() => goTo(1)}>
-                查看项目 <ArrowIcon />
-              </button>
-            </div>
-            <div className="cover-visual">
-              <div className="cover-number">01</div>
-              <div className="browser browser-cover">
-                <div className="browser-bar">
-                  <span />
-                  <span />
-                  <span />
-                  <b>yycircle.com</b>
-                </div>
-                <img
-                  src="/yycircle/home.png"
-                  alt="YY Circle homepage screenshot"
-                />
-              </div>
-              <div className="cover-caption">
-                <span>WEB EXPERIENCE</span>
-                <b>Singapore · Global</b>
-              </div>
-            </div>
-            <span className="cover-line" />
-          </div>
-        </section>
+              <span>YY CIRCLE · WEB EXPERIENCE REDESIGN</span>
+              <b>01 / 03</b>
+            </header>
 
-        <section id="brief" className="slide slide-paper">
-          <div className="slide-canvas">
-            <SlideHead index="02" eyebrow="PROJECT OVERVIEW" />
-            <div className="brief-layout">
-              <div className="brief-title">
-                <span className="section-no">01</span>
-                <h2>
-                  从“找工作”到
+            <div className="tc-intro-body">
+              <div className="tc-intro-copy">
+                <span className="tc-kicker">ON-DEMAND STAFFING PLATFORM · SINGAPORE</span>
+                <h1>
+                  让每一次
                   <br />
-                  “可信赖的匹配”
-                </h2>
+                  <em>灵活匹配</em>更快发生
+                </h1>
                 <p>
-                  把复杂的临时用工服务，转译为清晰、可信、可快速行动的数字体验。
+                  YY Circle 是 AI 驱动的按需用工平台。企业发布临时与轮班岗位，平台从
+                  <strong> 10 万+ 技能工人 </strong>
+                  中完成智能匹配，覆盖酒店、餐饮、零售、电商与会展等行业；累计完成
+                  900 万+ 工时，服务 12 个国家的 300+ 客户。
                 </p>
-              </div>
-              <div className="brief-quote">
-                <p>
-                  如何让企业与灵活就业者，在最短路径内理解平台价值并完成下一步？
-                </p>
-                <span>THE DESIGN QUESTION</span>
-              </div>
-              <div className="brief-metrics">
-                <article>
-                  <strong>02</strong>
-                  <span>核心用户端</span>
-                  <p>Employer / Worker</p>
-                </article>
-                <article>
-                  <strong>06</strong>
-                  <span>关键落地页面</span>
-                  <p>From awareness to action</p>
-                </article>
-                <article>
-                  <strong>12</strong>
-                  <span>覆盖国家</span>
-                  <p>Scalable market story</p>
-                </article>
-              </div>
-              <div className="brief-scope">
-                <span>我的设计范围</span>
-                <ul>
-                  <li>信息架构</li>
-                  <li>体验策略</li>
-                  <li>界面视觉</li>
-                  <li>响应式规范</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="home" className="slide slide-blue">
-          <div className="slide-canvas">
-            <SlideHead index="03" eyebrow="HOMEPAGE STRATEGY" light />
-            <div className="feature-layout">
-              <div className="feature-copy">
-                <span className="section-no">02</span>
-                <h2>
-                  一个入口，
-                  <br />
-                  讲清双边价值
-                </h2>
-                <p>
-                  首页以角色分流作为叙事中轴：先建立“全球灵活用工平台”的品牌认知，再分别承接雇主与求职者的核心诉求。
-                </p>
-                <div className="feature-points">
+                <div className="tc-stats">
                   <div>
-                    <b>01</b>
-                    <span>
-                      <strong>价值前置</strong>首屏集中表达效率、规模与可信度
-                    </span>
+                    <b>9M+</b>
+                    <span>累计完成工时</span>
                   </div>
                   <div>
-                    <b>02</b>
-                    <span>
-                      <strong>角色分流</strong>为 Employer / Worker 提供明确路径
-                    </span>
+                    <b>95%</b>
+                    <span>岗位填充率</span>
                   </div>
                   <div>
-                    <b>03</b>
-                    <span>
-                      <strong>证据闭环</strong>
-                      用评价、数据与合作品牌降低决策成本
-                    </span>
+                    <b>12</b>
+                    <span>覆盖国家</span>
                   </div>
                 </div>
+                <div className="tc-intro-brief">
+                  <span>DESIGN BRIEF</span>
+                  <p>
+                    把双边用工的复杂流程，转译成清晰、可信、可快速行动的数字体验——从角色分流到转化收口，六个页面共用一套语言。
+                  </p>
+                </div>
+                <button className="tc-cta" onClick={() => goTo(1)}>
+                  查看双端体验 <ArrowIcon />
+                </button>
               </div>
-              <div className="feature-browser-wrap">
-                <div className="browser browser-tall">
-                  <div className="browser-bar">
-                    <span />
-                    <span />
-                    <span />
-                    <b>yycircle.com</b>
+
+              <div className="tc-intro-shot">
+                <Frame src="/yycircle/home.png" url="yycircle.com">
+                  <div className="tc-intro-shot-label">
+                    <span>HOMEPAGE</span>
+                    <b>品牌首页 · 双角色分流</b>
                   </div>
-                  <img
-                    src="/yycircle/home.png"
-                    alt="YY Circle homepage full page screenshot"
-                  />
-                </div>
-                <div className="callout callout-one">
-                  <i>01</i>
-                  <span>清晰的价值主张</span>
-                </div>
-                <div className="callout callout-two">
-                  <i>02</i>
-                  <span>双角色内容分流</span>
-                </div>
-                <div className="callout callout-three">
-                  <i>03</i>
-                  <span>信任与社会证明</span>
-                </div>
+                </Frame>
               </div>
+            </div>
+
+            <div className="tc-intro-foot">
+              <span>AI MATCHING</span>
+              <span>100,000+ SKILLED WORKERS</span>
+              <span>300+ CLIENTS</span>
+              <span>1,000+ EMPLOYERS</span>
+              <i>FOR JOB SEEKER / FOR BUSINESS</i>
             </div>
           </div>
         </section>
 
-        <section id="worker" className="slide slide-paper">
-          <div className="slide-canvas">
-            <SlideHead index="04" eyebrow="WORKER JOURNEY" />
-            <div className="journey-layout">
-              <div className="journey-copy">
-                <span className="section-no">03</span>
-                <h2>
-                  把灵活工作
-                  <br />
-                  变成可预期的旅程
-                </h2>
-                <p>
-                  求职者关心的不只是岗位数量，更是薪资、排班与上岗门槛。页面用短步骤和明确收益，将不确定感转化为行动动力。
-                </p>
-              </div>
-              <div className="journey-steps">
-                {[
-                  ["01", "Discover", "发现适配岗位"],
-                  ["02", "Complete", "完善个人资料"],
-                  ["03", "Verify", "完成平台认证"],
-                  ["04", "Start", "快速上岗工作"],
-                ].map(([num, en, cn]) => (
-                  <article key={num}>
-                    <b>{num}</b>
-                    <span>{en}</span>
-                    <p>{cn}</p>
-                  </article>
-                ))}
-              </div>
-              <div className="crop-card worker-crop">
-                <img
-                  src="/yycircle/worker.png"
-                  alt="YY Circle worker page screenshot"
-                />
-              </div>
-              <div className="mini-page mini-page-one">
-                <img
-                  src="/yycircle/get-started.png"
-                  alt="YY Circle get started page screenshot"
-                />
-                <span>APP ENTRY</span>
-              </div>
-              <div className="journey-note">
-                <strong>“低门槛”并不等于“低信任”</strong>
-                <p>
-                  用透明流程、行业分类和
-                  FAQ，同步回答用户最在意的上岗速度与费用问题。
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="employer" className="slide slide-ink">
-          <div className="slide-canvas">
-            <SlideHead index="05" eyebrow="EMPLOYER CONVERSION" light />
-            <div className="employer-layout">
-              <div className="employer-title">
-                <span className="section-no">04</span>
-                <h2>
-                  从业务压力，
-                  <br />
-                  直达招聘方案
-                </h2>
-                <p>
-                  围绕“快、准、可管理”组织雇主端信息，让决策者先理解平台能力，再进入询盘与招聘动作。
-                </p>
-              </div>
-              <div className="employer-proof">
-                <span>BUSINESS VALUE</span>
-                <strong>95%</strong>
-                <p>Fulfilment rate</p>
-              </div>
-              <div className="employer-cards">
-                <article>
-                  <i>01</i>
-                  <b>Smart Screening</b>
-                  <p>智能筛选，减少无效沟通</p>
-                </article>
-                <article>
-                  <i>02</i>
-                  <b>Training Included</b>
-                  <p>标准培训，确保快速上岗</p>
-                </article>
-                <article>
-                  <i>03</i>
-                  <b>Smooth Deployment</b>
-                  <p>灵活部署，应对临时缺口</p>
-                </article>
-              </div>
-              <div className="employer-shot">
-                <img
-                  src="/yycircle/hire-worker.png"
-                  alt="YY Circle hire worker page screenshot"
-                />
-              </div>
-              <div className="employer-flow">
-                <span>认知</span>
-                <i />
-                <span>信任</span>
-                <i />
-                <span>询盘</span>
-                <i />
-                <span>转化</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="ecosystem" className="slide slide-sky">
-          <div className="slide-canvas">
-            <SlideHead index="06" eyebrow="TWO-SIDED ECOSYSTEM" />
-            <div className="ecosystem-title">
-              <span className="section-no">05</span>
-              <h2>
-                同一套系统，
-                <br />
-                两种不同的沟通语言
-              </h2>
-              <p>
-                保持品牌一致，同时针对角色目标调整内容密度、利益点与转化动作。
-              </p>
-            </div>
-            <div className="ecosystem-board">
-              <article className="persona persona-worker">
-                <div className="persona-label">
-                  <span>01</span>
-                  <b>WORKER</b>
-                  <i>发现机会</i>
-                </div>
-                <div className="persona-window">
-                  <img
-                    src="/yycircle/worker.png"
-                    alt="Worker experience page"
-                  />
-                </div>
-                <ul>
-                  <li>收益：快结薪、灵活排班</li>
-                  <li>动作：下载 App / Find Jobs</li>
-                </ul>
-              </article>
-              <div className="ecosystem-core">
-                <span>ONE</span>
-                <Mark />
-                <b>
-                  DESIGN
-                  <br />
-                  SYSTEM
-                </b>
-                <i />
-                <p>
-                  一致的导航、模块、CTA
-                  <br />
-                  与信任表达
-                </p>
-              </div>
-              <article className="persona persona-employer">
-                <div className="persona-label">
-                  <span>02</span>
-                  <b>EMPLOYER</b>
-                  <i>解决缺口</i>
-                </div>
-                <div className="persona-window">
-                  <img
-                    src="/yycircle/employer.png"
-                    alt="Employer experience page"
-                  />
-                </div>
-                <ul>
-                  <li>收益：稳定供给、智能管理</li>
-                  <li>动作：Request Demo / Hire Worker</li>
-                </ul>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="system" className="slide slide-paper">
-          <div className="slide-canvas">
-            <SlideHead index="07" eyebrow="PAGE SYSTEM" />
-            <div className="system-title">
+        <section id="roles" className="slide slide-paper tc-slide">
+          <div className="slide-canvas tc-canvas">
+            <SlideHead index="02" eyebrow="TWO-SIDED JOURNEY" />
+            <div className="tc-head">
               <div>
-                <span className="section-no">06</span>
-                <h2>从品牌认知到业务转化</h2>
+                <span className="tc-kicker">ONE SYSTEM · TWO AUDIENCES</span>
+                <h2>同一套系统，两种沟通语言</h2>
               </div>
               <p>
-                6
-                个关键页面形成完整内容网络，所有页面延续一致的蓝色视觉资产、卡片语言与行动指引。
+                品牌表达保持一致，内容密度与行动指引按角色调整：求职者关心「何时、何地、多久结薪」，企业关心「多快到岗、是否可靠」。
               </p>
             </div>
-            <div className="page-grid">
-              {pages.map((page, index) => (
-                <article key={page.name}>
-                  <div className="page-preview">
-                    <img src={page.src} alt={`${page.name} screenshot`} />
+
+            <div className="tc-role-wall">
+              {roles.map((role) => (
+                <article className="tc-role" key={role.no}>
+                  <div className="tc-role-title">
+                    <span>{role.tag}</span>
+                    <h3>
+                      <b>{role.no}</b>
+                      {role.title}
+                      <i>{role.en}</i>
+                    </h3>
                   </div>
-                  <div>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <b>{page.name}</b>
-                    <i>{page.cn}</i>
-                  </div>
+                  <Frame src={role.src} url="yycircle.com" />
+                  <ul className="tc-role-points">
+                    {role.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
                 </article>
               ))}
             </div>
-            <div className="system-strip">
-              <span>DESIGN PRINCIPLES</span>
-              <b>清晰层级</b>
-              <i /> <b>角色导向</b>
-              <i /> <b>可信证明</b>
-              <i /> <b>低门槛转化</b>
+
+            <div className="tc-role-foot">
+              <span>SHARED DESIGN SYSTEM</span>
+              <p>一致的导航、卡片语言与 CTA，配合蓝色视觉资产与信任表达，让两端读起来像同一个品牌。</p>
             </div>
           </div>
         </section>
 
-        <section id="closing" className="slide slide-closing">
-          <div className="slide-canvas">
-            <SlideHead index="08" eyebrow="PROJECT OUTCOME" light />
-            <div className="closing-layout">
-              <div className="closing-copy">
-                <span className="section-no">07</span>
-                <h2>
-                  设计不只是呈现服务，
-                  <br />
-                  更是在建立连接。
-                </h2>
-                <p>
-                  通过双角色信息架构、统一的视觉系统与证据化表达，YY Circle
-                  官网将复杂的用工生态转化为清晰、可信、可行动的体验。
-                </p>
-                <div className="closing-tags">
-                  <span>CLARITY</span>
-                  <span>TRUST</span>
-                  <span>CONVERSION</span>
-                </div>
+        <section id="journey" className="slide slide-ink tc-slide">
+          <div className="slide-canvas tc-canvas">
+            <SlideHead index="03" eyebrow="CONVERSION & PAGE SYSTEM" light />
+            <div className="tc-head is-light">
+              <div>
+                <span className="tc-kicker">SIX PAGES · ONE PATH</span>
+                <h2>从认知到行动，六个页面一条路径</h2>
               </div>
-              <div className="closing-pages">
-                <div className="closing-page p1">
-                  <img src="/yycircle/employer.png" alt="Employer page" />
-                </div>
-                <div className="closing-page p2">
-                  <img src="/yycircle/home.png" alt="Homepage" />
-                </div>
-                <div className="closing-page p3">
-                  <img src="/yycircle/worker.png" alt="Worker page" />
-                </div>
-              </div>
-              <footer>
-                <Mark light />
-                <span>UI / UX PORTFOLIO · YY CIRCLE</span>
-                <b>THANK YOU.</b>
-              </footer>
+              <p>
+                首页完成品牌认知与角色分流，双端页面承接各自诉求，最后由人才匹配、需求提交与下载引导收口转化。
+              </p>
+            </div>
+
+            <div className="tc-trio-wall">
+              {conversions.map((item) => (
+                <Frame src={item.src} url="yycircle.com" key={item.no}>
+                  <div className="tc-shot-label">
+                    <b>{item.no}</b>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <span>{item.cn}</span>
+                    </div>
+                    <p>{item.note}</p>
+                  </div>
+                </Frame>
+              ))}
+            </div>
+
+            <div className="tc-flow">
+              <span>DISCOVER</span>
+              <i>→</i>
+              <span>MATCH</span>
+              <i>→</i>
+              <span>DEPLOY</span>
+              <i>→</i>
+              <span>EARN</span>
+              <em>CLARITY · TRUST · CONVERSION</em>
             </div>
           </div>
         </section>

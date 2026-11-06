@@ -422,3 +422,381 @@ main {
 body {
   overflow-x: clip;
 }
+
+/* ---- 3 屏重构：品牌与首页 / 双端旅程 / 转化闭环 ---- */
+.tc-canvas {
+  display: flex;
+  flex-direction: column;
+  padding: 118px 100px 60px;
+}
+
+.tc-top {
+  position: absolute;
+  z-index: 10;
+  left: 5.2%;
+  right: 5.2%;
+  top: 5.4%;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr 120px;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .28);
+  font: 600 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .15em;
+  color: #c6d7e3;
+}
+.tc-top > span { text-align: center; }
+.tc-top > b { text-align: right; color: #fff; }
+
+.tc-kicker {
+  display: block;
+  font: 700 13px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .18em;
+  color: var(--blue);
+}
+.slide-cover .tc-kicker,
+.slide-ink .tc-kicker { color: var(--blue-bright); }
+
+.tc-head {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 80px;
+  margin-bottom: 34px;
+}
+.tc-head h2 {
+  margin: 14px 0 0;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+  color: var(--ink);
+}
+.tc-head > p {
+  width: 42%;
+  margin: 0 0 4px;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.tc-head.is-light h2 { color: #fff; }
+.tc-head.is-light > p { color: #9fb3c4; }
+
+.tc-frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 10px;
+  background: #0c1c29;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .3);
+}
+.tc-frame-bar {
+  flex: none;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  background: #14283a;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+.tc-frame-bar > span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3c5a70;
+}
+.tc-frame-bar > b {
+  margin-left: 12px;
+  font: 500 11px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .06em;
+  color: #8ea6b8;
+}
+.tc-frame-view {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.tc-frame-view img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 01 · 品牌与首页 */
+.tc-intro {
+  display: block;
+  padding: 0;
+}
+.tc-intro-body {
+  position: absolute;
+  left: 100px;
+  right: 100px;
+  top: 152px;
+  bottom: 124px;
+  display: flex;
+  gap: 80px;
+}
+.tc-intro-copy {
+  width: 44%;
+  display: flex;
+  flex-direction: column;
+}
+.tc-intro-copy h1 {
+  margin: 28px 0 0;
+  font-size: 74px;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -.04em;
+  color: #fff;
+}
+.tc-intro-copy h1 em {
+  font-style: normal;
+  color: var(--blue-bright);
+}
+.tc-intro-copy > p {
+  width: 88%;
+  margin: 34px 0 0;
+  font-size: 21px;
+  line-height: 1.85;
+  color: #a8bccb;
+}
+.tc-intro-copy > p strong { color: #fff; font-weight: 700; }
+.tc-stats {
+  display: flex;
+  gap: 46px;
+  margin-top: 44px;
+}
+.tc-stats div { display: flex; flex-direction: column; gap: 8px; }
+.tc-stats b {
+  font: 700 38px/1 'Space Grotesk', sans-serif;
+  color: #fff;
+}
+.tc-stats span {
+  font-size: 14px;
+  letter-spacing: .06em;
+  color: #7f97a9;
+}
+.tc-intro-brief {
+  margin-top: 44px;
+  padding-left: 18px;
+  border-left: 2px solid var(--blue-bright);
+}
+.tc-intro-brief span {
+  display: block;
+  font: 700 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .18em;
+  color: var(--blue-bright);
+}
+.tc-intro-brief p {
+  width: 86%;
+  margin: 14px 0 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #8fa8ba;
+}
+.tc-cta {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding: 16px 26px;
+  border: 1px solid rgba(69, 184, 237, .6);
+  border-radius: 6px;
+  background: rgba(69, 184, 237, .12);
+  color: #fff;
+  font: 600 16px/1 'Noto Sans SC', sans-serif;
+  letter-spacing: .04em;
+}
+.tc-cta svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+.tc-intro-shot {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-width: 0;
+}
+.tc-intro-shot .tc-frame { flex: 1; }
+.tc-intro-shot-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 60px 22px 22px;
+  background: linear-gradient(180deg, transparent, rgba(6, 22, 34, .94) 62%);
+}
+.tc-intro-shot-label span {
+  font: 700 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .16em;
+  color: var(--blue-bright);
+}
+.tc-intro-shot-label b { font-size: 16px; font-weight: 600; color: #fff; }
+.tc-intro-foot {
+  position: absolute;
+  left: 100px;
+  right: 100px;
+  bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  font: 600 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .14em;
+  color: #7f97a9;
+}
+.tc-intro-foot i {
+  margin-left: auto;
+  font-style: normal;
+  color: var(--blue-bright);
+}
+
+/* 02 · 双端旅程 */
+.tc-role-wall {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  gap: 28px;
+}
+.tc-role {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+.tc-role-title {
+  flex: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(11, 34, 53, .18);
+}
+.tc-role-title > span {
+  font: 700 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .18em;
+  color: var(--blue);
+}
+.tc-role-title h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.tc-role-title h3 b {
+  font: 700 15px/1 'Space Grotesk', sans-serif;
+  color: var(--blue);
+}
+.tc-role-title h3 i {
+  font: 600 11px/1 'Space Grotesk', sans-serif;
+  font-style: normal;
+  letter-spacing: .14em;
+  color: #7b8f9e;
+}
+.tc-role .tc-frame { flex: 1; margin-top: 16px; }
+.tc-role-points {
+  flex: none;
+  display: flex;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.tc-role-points li {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid rgba(11, 34, 53, .12);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #31506a;
+}
+.tc-role-foot {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(11, 34, 53, .18);
+}
+.tc-role-foot > span {
+  flex: none;
+  font: 700 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .16em;
+  color: var(--blue);
+}
+.tc-role-foot > p { margin: 0; font-size: 16px; color: var(--muted); }
+
+/* 03 · 转化闭环 */
+.tc-trio-wall {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  gap: 24px;
+}
+.tc-trio-wall .tc-frame { flex: 1; }
+.tc-shot-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 72px 22px 22px;
+  background: linear-gradient(180deg, transparent, rgba(6, 22, 34, .96) 58%);
+}
+.tc-shot-label b {
+  font: 700 13px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .14em;
+  color: var(--blue-bright);
+}
+.tc-shot-label div {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 12px;
+}
+.tc-shot-label strong {
+  font: 700 24px/1.2 'Space Grotesk', sans-serif;
+  color: #fff;
+}
+.tc-shot-label span { font-size: 15px; color: #c6d7e3; }
+.tc-shot-label p { margin: 12px 0 0; font-size: 14px; color: #9fb3c4; }
+.tc-flow {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  font: 700 13px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .14em;
+  color: #dbe9f2;
+}
+.tc-flow i { font-style: normal; color: var(--blue-bright); }
+.tc-flow em {
+  margin-left: auto;
+  font-style: normal;
+  color: #7f97a9;
+}

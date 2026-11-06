@@ -1104,9 +1104,9 @@ h2 span {
 
 .outcome-copy > p {
   width: 70%;
-  margin-top: 34.6px;
+  margin-top: 30px;
   color: #91a1ae;
-  font-size: 15.4px;
+  font-size: 19.4px;
   line-height: 1.8;
 }
 
@@ -1128,12 +1128,12 @@ h2 span {
 
 .outcome-results b {
   color: #24a5e2;
-  font-size: 15.4px;
+  font-size: 19.4px;
 }
 
 .outcome-results span {
   color: #d8e1e7;
-  font-size: 12.7px;
+  font-size: 16.7px;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -1394,7 +1394,7 @@ body {
   width: 43%;
   margin-bottom: 6px;
   color: #9fb3c4;
-  font-size: 17px;
+  font-size: 21px;
   line-height: 1.75;
 }
 
@@ -1511,4 +1511,158 @@ main {
 
 body {
   overflow-x: clip;
+}
+
+/* 项目总结：从 UI/UX 视角展示可复用的设计系统 */
+.outcome-spec {
+  position: absolute;
+  z-index: 5;
+  right: 6%;
+  top: 19%;
+  width: 38%;
+  padding: 30px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(11, 26, 40, 0.82);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.38);
+}
+
+.spec-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #29a7e4;
+}
+
+.outcome-spec h3 {
+  margin: 16px 0 24px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #eaf4fa;
+}
+
+.spec-block { margin-bottom: 22px; }
+
+.spec-block > b {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #67859b;
+}
+
+.spec-swatches {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+.spec-swatches > div { flex: 1; min-width: 0; }
+.spec-swatches i {
+  display: block;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 6px;
+}
+.spec-swatches span {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #dbe9f2;
+}
+.spec-swatches small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #67859b;
+}
+
+.spec-type {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  margin-top: 14px;
+}
+.spec-type > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 13px;
+  color: #9fb3c4;
+}
+.spec-type span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #eaf4fa;
+}
+
+.spec-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.spec-chips span {
+  padding: 8px 12px;
+  border: 1px solid rgba(41, 167, 228, 0.35);
+  border-radius: 5px;
+  background: rgba(41, 167, 228, 0.08);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #9fd4f2;
+}
+
+.spec-foot {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #67859b;
+}
+
+.outcome-deliverables {
+  position: absolute;
+  z-index: 5;
+  left: 8.2%;
+  right: 6%;
+  bottom: 18%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.outcome-deliverables::before {
+  content: 'DELIVERABLES / 交付清单';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #67859b;
+}
+.outcome-deliverables article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.outcome-deliverables b {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #29a7e4;
+}
+.outcome-deliverables strong {
+  font-size: 19px;
+  font-weight: 700;
+  color: #eaf4fa;
+}
+.outcome-deliverables span {
+  font-size: 13px;
+  color: #8ba2b4;
 }
